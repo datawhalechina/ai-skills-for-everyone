@@ -1,0 +1,32 @@
+# Local third-party projects and downloaded mirrors
+/ppt-master/
+
+# Generated PPT Master outputs
+/kits/ppt-master-starter/outputs/*
+!/kits/ppt-master-starter/outputs/.gitkeep
+/kits/ppt-master-starter/projects/
+
+# Packaged archives should be published as releases, not committed by default
+*.zip
+*.rar
+*.7z
+
+# Local agent/editor state
+.agents/
+.trae/
+.cursor/
+.vscode/
+
+# Dependencies and virtual environments
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# Local secrets and machine-specific config
+.env
+.env.*
+
+# Generated docs
+/kits/ppt-master-starter/START_HERE.pdf
