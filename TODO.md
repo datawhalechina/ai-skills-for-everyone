@@ -1,6 +1,6 @@
 # AI Skills for Everyone TODO
 
-这份 TODO 记录项目接下来要做什么。早期脑暴已经收束，当前重点是：先把第一个可跑通的教程和 PPT Starter 上传到 GitHub，再把它慢慢扩成一个社区可参与的 Skill Hub。
+这份 TODO 记录项目现在完成了什么、还缺什么、下一步先做什么。
 
 ## 当前定位
 
@@ -8,41 +8,61 @@
 
 我们先教普通人用起来，再按场景维护可靠 Skill。这个项目不是单纯的 GitHub 链接合集，也不是默认复制第三方 Skill 的镜像站。
 
+## 当前状态
+
+- GitHub 仓库：https://github.com/nameless0120/ai-skills-for-everyone
+- 默认分支：`main`
+- 当前已完成第一次上传。
+- 仓库已有 `LICENSE`。
+- 第一条完整样例：PPT Master。
+
 ## 已完成
 
-- [x] 搭好教程主线：第 0 课到第 5 课。
-- [x] 完成第 1 个可跟做案例：PPT Master Starter。
-- [x] 默认使用 Trae 作为普通用户入口。
-- [x] 补齐 GitHub 打不开时的备用下载说明。
-- [x] 补齐中文命令审核提示词。
-- [x] 补齐 PPT 真实需求样例：`inputs/realistic-ppt-brief.md`。
-- [x] 补齐 PPT Starter 排错文档。
-- [x] 建好基础目录：`tutorial/`、`kits/`、`collections/`、`catalog/`、`docs/`、`templates/`。
+### 教程主线
+
+- [x] 第 0 课：先选你的路线。
+- [x] 第 1 课：用开源 PPT Skill 生成可编辑 PPT。
+- [x] 第 2 课：用 Trae 安装已知 Skill，再按需求找到新 Skill。
+- [x] 第 3 课：使用我们维护的 Skill 库。
+- [x] 第 4 课：把自己的重复工作搓成 Skill。
+- [x] 第 5 课：Agent 使用进阶。
+
+### PPT Master Starter
+
+- [x] 完成 `kits/ppt-master-starter/`。
+- [x] 补齐 `START_HERE.md`。
+- [x] 补齐 `DOWNLOADS.md`。
+- [x] 补齐 `troubleshooting.md`。
+- [x] 补齐 `inputs/realistic-ppt-brief.md` 真实需求样例。
+- [x] 补齐可复制提示词：`bootstrap-env.txt`、`normal-use.txt`、`command-review.txt`。
+- [x] 补齐 Windows 和 macOS/Linux 环境检查脚本。
+- [x] 统一使用“GitHub 能不能打开”的表述。
+- [x] 不上传生成的 PPT、PDF、压缩包和本地第三方仓库。
+
+### Skill 库骨架
+
+- [x] 建好 `catalog/`。
+- [x] 建好 `collections/`。
+- [x] 建好 `templates/`。
+- [x] 建好 `reviews/`。
+- [x] 建好 `sources/`。
 - [x] 建好第一个 Skill 卡片：PPT Master。
-- [x] 建好写作与办公合集的初版。
-- [x] 建好贡献指南、收录标准、评测维度和模板。
-- [x] 清理教程里不适合普通读者的网络表述，统一成“GitHub 能不能打开”。
-- [x] 清理教程里的具体命令行工具名，统一写成“命令行型 Agent”。
+- [x] 建好写作与办公合集初版。
 
-## 上传 GitHub 前
+### 社区和维护基础
 
-- [x] `.gitignore` 已忽略本地第三方仓库、生成文件、压缩包、编辑器状态、依赖目录和 `.env`。
-- [x] 不上传本地 PPT Master 源仓库。
-- [x] 不上传生成的 `START_HERE.pdf`。
-- [x] 不上传生成的 PPT 输出目录。
-- [x] 已检查敏感凭据，没有发现真实密钥。
-- [x] 已检查早期旧入口和旧文件名，没有残留。
-- [x] 已搜索旧 Trae 地址，没有残留。
-- [ ] 选择并添加仓库自己的 `LICENSE`。
-- [ ] 创建 GitHub 空仓库。
-- [ ] 设置 Git 作者信息。
-- [ ] commit 并 push。
+- [x] 建好 `CONTRIBUTING.md`。
+- [x] 建好收录标准：`docs/curation-guide.md`。
+- [x] 建好评测维度：`docs/review-rubric.md`。
+- [x] 建好 Skill 卡片、合集、评测、上手教程模板。
+- [x] 建好 `.gitignore`，忽略本地输出、编辑器状态、依赖目录和 `.env`。
+- [x] 完成第一次 commit 和 push。
 
-## 上传后第一批改进
+## 还缺什么
 
 ### 1. 让它更像社区 Skill Hub
 
-- [ ] 把 README 改成双入口：我要学习教程 / 我要浏览 Skill Hub。
+- [ ] README 改成双入口：我要学习教程 / 我要浏览 Skill Hub。
 - [ ] 新增 `catalog/INDEX.md`，做所有 Skill 的总表。
 - [ ] 给 Skill 卡片加 YAML frontmatter，方便以后生成索引。
 - [ ] 新增 `.github/ISSUE_TEMPLATE/skill-submission.yml`。
@@ -79,6 +99,14 @@
 - [ ] 每个 Skill 卡片记录是否有 starter。
 - [ ] 每月复核一次高优先级 Skill 的链接、stars、版本和维护状态。
 - [ ] 对失效或风险变高的条目标记为观察中或不推荐。
+
+## 近期优先级
+
+1. 先把 README 改成“教程入口 + Skill Hub 入口”双入口。
+2. 新增 `catalog/INDEX.md`，哪怕第一版只有 PPT Master。
+3. 给 PPT Master 卡片加 YAML frontmatter，定下元数据格式。
+4. 新增 GitHub issue / PR 模板，让别人知道怎么贡献。
+5. 写第二个 Skill 卡片，优先从写作与办公里选。
 
 ## 收录原则提醒
 
