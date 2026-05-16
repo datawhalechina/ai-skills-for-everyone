@@ -7,6 +7,7 @@
 第一批目标：
 
 - [ppt-master-starter](ppt-master-starter/README.md)：让普通人用 PPT Master 把 PDF、DOCX 或 Markdown 做成可编辑 PPT。
+- [weekly-status-starter](weekly-status-starter/README.md)：搭配本项目维护的 Weekly Status Skill，把零散工作记录整理成周报或项目状态更新。
 
 Kit 的原则：
 
@@ -14,6 +15,7 @@ Kit 的原则：
 - 输入文件有固定位置。
 - 输出文件有固定位置或明确说明。
 - 提示词可以直接复制给 Trae Agent。
-- 环境检查脚本只检查必要项，不偷偷做危险操作。
+- 需要环境检查时，脚本只检查必要项，不偷偷做危险操作。
 - 如果依赖 GitHub、npm、PyPI 等外部下载，要提供普通人能转发给别人帮忙下载的清单。
 - 保留原项目链接、许可证和风险说明。
+- 如果是本项目自研 Skill，要说明 Skill 文件位置，并让 starter 本身保持可独立使用。

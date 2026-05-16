@@ -55,6 +55,18 @@
 - [x] 建好第一个 Skill 卡片：PPT Master。
 - [x] 建好第二个 Skill 卡片：GPT Image2 PPT Skills。
 - [x] 建好写作与办公合集初版。
+- [x] 建好第一个本项目自研轻 Skill：Weekly Status。
+
+### Weekly Status Starter
+
+- [x] 完成 `kits/weekly-status-starter/`。
+- [x] 补齐 `START_HERE.md`。
+- [x] 补齐 `README.md`。
+- [x] 补齐 `troubleshooting.md`。
+- [x] 补齐 `samples/sample-weekly-notes.md` 真实场景样例。
+- [x] 补齐 `inputs/put-your-notes-here.md` 输入模板。
+- [x] 补齐可复制提示词：`prompts/normal-use.txt`。
+- [x] 明确周报默认面向直属领导或项目负责人，语气要稳重、简洁，不邀功、不甩锅。
 
 ### 社区和维护基础
 
@@ -85,8 +97,9 @@
 ### 2. 扩写 Skill 内容
 
 - [x] 先把写作与办公拆成小类推荐位表，每个小类明确缺哪个位置。
-- [ ] 写作与办公继续补：周报 / 状态更新。
-- [ ] 写作与办公继续补：商务邮件改写。
+- [x] 写作与办公继续补：周报 / 状态更新。已补 Weekly Status 自研轻 Skill、Weekly Status Starter；进阶路线只保留 Lark CLI Agent Skills 和 MLE-Agent。
+- [ ] 优化 Weekly Status Skill：目前 starter 已完成，但 Skill 还偏简陋，生成的周报版式和层次不够好看，需要继续打磨输出结构、标题、重点摘要和领导视角表达。
+- [ ] 改造 Weekly Status Skill：补自动报告生成能力，例如读取固定输入目录、合并多份材料、生成固定文件名、输出领导版摘要和完整周报两个版本。
 - [ ] 写作与办公继续补：会议纪要整理。
 - [ ] 写作与办公继续补：长文档摘要。
 - [ ] 写作与办公继续补：表格分析报告。
@@ -94,6 +107,7 @@
 - [ ] 每个小类至少先收 3 个候选，再决定谁进“最省心 / 进阶 / 可改造”。
 - [ ] 每个正式推荐 Skill 尽量补一个普通人上手路线。
 - [ ] 对复杂 Skill，再考虑做 starter kit。
+- [x] 给“周报 / 状态更新”做一个自研轻 Skill 和普通人 starter，不直接依赖飞书、GitHub 或真实邮箱。
 
 ### 3. 完善教程
 
@@ -101,7 +115,7 @@
 - [ ] 第 1 课根据真实用户试用反馈继续改。
 - [ ] 第 2 课补一个完整示例：从需求到找到候选 Skill。
 - [ ] 第 3 课补一张 Skill 卡片阅读示例。
-- [ ] 第 4 课补一个“周报 Skill”样例文件夹。
+- [x] 第 4 课补一个“周报 Skill”样例文件夹，并链接到 Weekly Status Skill / Starter。
 - [ ] 第 5 课补 API Key 常见问题和费用提醒。
 
 ### 4. 维护和复核
@@ -117,8 +131,8 @@
 1. 给每个小类先补 3 个候选来源，再筛成推荐位。
 2. 第 0 课补一张“你该走哪条路线”的简单表格。
 3. 第 3 课补一张 Skill 卡片阅读示例。
-4. 第 4 课补一个“周报 Skill”样例文件夹。
-5. 继续补写作与办公里的周报、邮件、会议纪要候选。
+4. 优化并改造 `skills/weekly-status/`：先提升周报版式和层次，再补自动报告生成能力。
+5. 继续补写作与办公里的邮件、会议纪要候选和 starter。
 
 ## 收录原则提醒
 

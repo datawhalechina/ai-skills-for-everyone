@@ -49,6 +49,13 @@ my-skill/
 
 这已经是一个最小可用的 Skill 工作区。
 
+如果你想先看一个成品，可以看本项目维护的：
+
+- [Weekly Status Skill](../skills/weekly-status/SKILL.md)
+- [Weekly Status Starter](../kits/weekly-status-starter/README.md)
+
+它就是把“周报”这个窄任务做成轻 Skill，再配一个普通人能直接复制提示词使用的 starter。
+
 ## 第 1 步：选一个很窄的任务
 
 不要做“全能办公助手”。
@@ -172,3 +179,5 @@ samples/sample-input.md
 
 不用写代码，只建文件夹、写样例、写提示词。  
 如果它能稳定把你的零散记录变成一份像样的周报，它就已经有用了。
+
+做完以后，可以对照 [Weekly Status Starter](../kits/weekly-status-starter/README.md) 看看还缺不缺 `START_HERE.md`、样例、常见问题和输出目录。

@@ -45,3 +45,7 @@
 | --- | --- | --- | --- |
 | 2026-05-15 | 用户提供：`hugohe3/ppt-master` | PPT Master，PPT 生成类 Skill，MIT，约 16.6k stars | 已建 catalog 卡片，放入写作与办公合集 |
 | 2026-05-16 | 用户提供：`JuneYaooo/gpt-image2-ppt-skills` | GPT Image2 PPT Skills，PPT 生成类进阶 Skill，Apache-2.0，约 570 stars | 已建 catalog 卡片，放入写作与办公合集 |
+| 2026-05-16 | 周报 / 状态更新：`larksuite/cli` | 飞书 / Lark 官方 CLI，MIT，约 10.9k stars，最近版本 v1.0.32，内置 `lark-workflow-standup-report` | 已建 catalog 卡片，放入写作与办公合集进阶位 |
+| 2026-05-16 | 周报 / 状态更新：`MLSysOps/MLE-agent` | MIT，约 1.6k stars，支持从 GitHub 或本地 Git 仓库生成工作报告 | 已建 catalog 卡片，标为可参考 |
+| 2026-05-16 | 周报 / 状态更新：`github/gh-aw` | GitHub Agentic Workflows，MIT，约 4.5k stars，可改造成定时项目状态更新 | 暂不进入周报正式推荐位；周报可改造方向优先放在自研 Weekly Status 上 |
+| 2026-05-16 | 周报 / 状态更新：自研路线 | 暂时没有找到同时满足高星、普通人开箱、明确 Skill 结构的周报项目 | 已建 Weekly Status 轻 Skill 和 starter，作为最省心路线 |

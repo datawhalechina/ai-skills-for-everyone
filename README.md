@@ -13,7 +13,7 @@ AI Skills for Everyone 是一个面向普通人的开源 AI Skill 精选库。
 - 进阶：功能更完整，但需要一点环境配置或 Agent 使用经验。
 - 可改造：适合轻技术用户或开发者继续改造成自己的流程。
 
-第一条完整样板是 PPT 生成。你可以跟着第 1 课，用开源 PPT Skill 把一份材料生成可编辑的 `.pptx`。后续会继续补周报、邮件、会议纪要、长文档摘要、表格分析等办公场景。
+第一条完整样板是 PPT 生成。你可以跟着第 1 课，用开源 PPT Skill 把一份材料生成可编辑的 `.pptx`。现在也补了一个周报 / 状态更新轻 Skill 和 starter，后续会继续补邮件、会议纪要、长文档摘要、表格分析等办公场景。
 
 ## 项目受众
 
@@ -43,6 +43,7 @@ AI Skills for Everyone 是一个面向普通人的开源 AI Skill 精选库。
 | [第 4 课：把自己的重复工作搓成 Skill](tutorial/04-make-your-own-skill.md) | 把重复任务整理成固定输入、固定步骤、固定输出、样例和提示词。 | ✅ |
 | [第 5 课：Agent 使用进阶](tutorial/05-agent-advanced.md) | 了解不同 Agent、API Key、自定义模型和命令确认。 | ✅ |
 | [PPT Master Starter](kits/ppt-master-starter/README.md) | 第 1 课配套工作区，普通用户可以直接跟着操作。 | ✅ |
+| [Weekly Status Starter](kits/weekly-status-starter/README.md) | 把零散工作记录整理成周报或项目状态更新。 | ✅ |
 | [Skill Hub 总表](catalog/INDEX.md) | 按大类、小类和推荐位整理已收录 Skill。 | 🚧 |
 | [写作与办公合集](collections/writing-and-office.md) | 周报、邮件、会议纪要、PPT、表格、SOP 等办公场景。 | 🚧 |
 | [Datawhale 立项申请稿](docs/datawhale-proposal.md) | 面向 Datawhale 的项目申请材料。 | ✅ |

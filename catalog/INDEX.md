@@ -17,7 +17,7 @@
 | 小类 | 最省心 | 进阶 | 可改造 | 状态 |
 | --- | --- | --- | --- | --- |
 | PPT 生成 / 大纲生成 | [PPT Master Starter](../kits/ppt-master-starter/README.md) | [PPT Master](writing-and-office/ppt-master.md)<br>[GPT Image2 PPT Skills](writing-and-office/gpt-image2-ppt-skills.md) | 待补充 | 已有基础路线和进阶视觉路线 |
-| 周报 / 状态更新 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
+| 周报 / 状态更新 | [Weekly Status](writing-and-office/weekly-status.md)<br>[Weekly Status Starter](../kits/weekly-status-starter/README.md) | [Lark CLI Agent Skills](writing-and-office/lark-cli.md)<br>[MLE-Agent](writing-and-office/mle-agent.md) | Weekly Status 自动报告生成能力（计划中） | starter 已完成，后续重点改造自研 Skill |
 | 商务邮件改写 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
 | 会议纪要整理 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
 | 长文档摘要 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
