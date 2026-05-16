@@ -22,7 +22,7 @@
 
 | 小类 | 最省心 | 进阶 | 可改造 | 状态 |
 | --- | --- | --- | --- | --- |
-| PPT 生成 / 大纲生成 | [PPT Master Starter](../kits/ppt-master-starter/README.md) | [PPT Master](../catalog/writing-and-office/ppt-master.md) | 待补充 | 已有完整上手路线 |
+| PPT 生成 / 大纲生成 | [PPT Master Starter](../kits/ppt-master-starter/README.md) | [PPT Master](../catalog/writing-and-office/ppt-master.md)<br>[GPT Image2 PPT Skills](../catalog/writing-and-office/gpt-image2-ppt-skills.md) | 待补充 | 已有基础路线和进阶视觉路线 |
 | 周报 / 状态更新 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
 | 商务邮件改写 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
 | 会议纪要整理 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
@@ -64,6 +64,7 @@
 | --- | --- | --- | --- | --- |
 | 最省心 | [PPT Master Starter](../kits/ppt-master-starter/README.md) | 普通人按教程生成可编辑 `.pptx` | 新手 | 已有[第 1 课教程](../tutorial/01-use-ppt-skill.md) |
 | 进阶 | [PPT Master](../catalog/writing-and-office/ppt-master.md) | 从 PDF、DOCX、URL、Markdown 或文字材料生成可编辑 `.pptx` | 进阶 / 开发者 | 推荐收录 |
+| 进阶 | [GPT Image2 PPT Skills](../catalog/writing-and-office/gpt-image2-ppt-skills.md) | 用 `gpt-image-2` 生成视觉风格更强的 PPT，支持模板克隆 | 进阶 | 推荐收录，需要图片生成 API |
 
 ## 筛选重点
 
@@ -72,6 +73,7 @@
 - 最好支持用户提供上下文材料。
 - 需要明确提醒隐私和公司机密风险。
 - PPT 类优先看能不能生成 `.pptx`、Markdown 转 slides，或接入现有演示工具；只会给空泛大纲的项目先放低优先级。
+- PPT 类要区分“可编辑原生 PPTX”和“图片式视觉 PPT”。前者适合后期改稿，后者适合视觉提案和风格样片。
 
 ## 暂不优先
 
@@ -82,3 +84,4 @@
 ## 已收录条目
 
 - [PPT Master](../catalog/writing-and-office/ppt-master.md)：PPT 生成类第一条。它直接提供 `skills/ppt-master/SKILL.md`，并把文档材料转成可编辑 PowerPoint 文件，优先级高。普通用户先看[第 1 课教程](../tutorial/01-use-ppt-skill.md)，再打开[开箱工作区](../kits/ppt-master-starter/README.md)。
+- [GPT Image2 PPT Skills](../catalog/writing-and-office/gpt-image2-ppt-skills.md)：PPT 生成类进阶条目。它使用 `gpt-image-2` 做高视觉风格 PPT，也支持模板克隆，但需要图片生成 API 和费用意识。

@@ -44,3 +44,4 @@
 | 日期 | 关键词或来源 | 发现 | 后续动作 |
 | --- | --- | --- | --- |
 | 2026-05-15 | 用户提供：`hugohe3/ppt-master` | PPT Master，PPT 生成类 Skill，MIT，约 16.6k stars | 已建 catalog 卡片，放入写作与办公合集 |
+| 2026-05-16 | 用户提供：`JuneYaooo/gpt-image2-ppt-skills` | GPT Image2 PPT Skills，PPT 生成类进阶 Skill，Apache-2.0，约 570 stars | 已建 catalog 卡片，放入写作与办公合集 |

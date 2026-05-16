@@ -5,3 +5,4 @@
 已收录：
 
 - [PPT Master](ppt-master.md)：把 PDF、DOCX、URL、Markdown 或文字材料生成可编辑 `.pptx`。
+- [GPT Image2 PPT Skills](gpt-image2-ppt-skills.md)：用 `gpt-image-2` 生成视觉风格更强的 PPT，适合进阶用户。

@@ -14,8 +14,13 @@
 - 默认分支：`main`
 - 当前已完成第一次上传。
 - 仓库已有 `LICENSE`。
-- 第一条完整样例：PPT Master。
+- 第一条完整普通人上手样例：PPT Master。
+- 第二条进阶 PPT 卡片：GPT Image2 PPT Skills。
 - 当前策略已改成“精选 Skill Hub + 教程入口”。
+- 已补 `docs/project-charter.md`，用于立项说明。
+- 立项说明已按 Datawhale 中文开源项目模板口径调整。
+- 已补 `docs/datawhale-proposal.md`，用于 Datawhale 立项申请。
+- 已改为双许可证：文档内容 CC BY-NC-SA 4.0，代码脚本 MIT。
 
 ## 已完成
 
@@ -48,11 +53,13 @@
 - [x] 建好 `reviews/`。
 - [x] 建好 `sources/`。
 - [x] 建好第一个 Skill 卡片：PPT Master。
+- [x] 建好第二个 Skill 卡片：GPT Image2 PPT Skills。
 - [x] 建好写作与办公合集初版。
 
 ### 社区和维护基础
 
 - [x] 建好 `CONTRIBUTING.md`。
+- [x] 建好 Datawhale 立项申请稿：`docs/datawhale-proposal.md`。
 - [x] 建好收录标准：`docs/curation-guide.md`。
 - [x] 建好评测维度：`docs/review-rubric.md`。
 - [x] 建好 Skill 卡片、合集、评测、上手教程模板。
@@ -72,6 +79,8 @@
 - [x] 新增 `.github/pull_request_template.md`。
 - [x] 新增 `docs/review-process.md`，写清楚候选、观察中、推荐、不推荐的流程。
 - [x] 新增 `docs/third-party-policy.md`，写清楚第三方 Skill、备用下载、许可证和镜像边界。
+- [x] 新增 `docs/project-charter.md`，写清楚立项目标、范围、交付物和成功标准。
+- [x] 更新许可证：文档内容 CC BY-NC-SA 4.0，代码脚本 MIT。
 
 ### 2. 扩写 Skill 内容
 
@@ -105,11 +114,11 @@
 
 ## 近期优先级
 
-1. 写第二个 Skill 卡片，优先从写作与办公里选。
-2. 给每个小类先补 3 个候选来源，再筛成推荐位。
-3. 第 0 课补一张“你该走哪条路线”的简单表格。
-4. 第 3 课补一张 Skill 卡片阅读示例。
-5. 第 4 课补一个“周报 Skill”样例文件夹。
+1. 给每个小类先补 3 个候选来源，再筛成推荐位。
+2. 第 0 课补一张“你该走哪条路线”的简单表格。
+3. 第 3 课补一张 Skill 卡片阅读示例。
+4. 第 4 课补一个“周报 Skill”样例文件夹。
+5. 继续补写作与办公里的周报、邮件、会议纪要候选。
 
 ## 收录原则提醒
 
