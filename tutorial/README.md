@@ -19,7 +19,7 @@
 
 ## 第 2 课
 
-[用 Trae 安装已知 Skill，再按需求找到新 Skill](02-high-star-skills.md)
+[用 Trae 安装已知 Skill，再按需求找到新 Skill](02-find-and-install-skills.md)
 
 你会学会两件事：已经有地址时，怎么让 Trae 先判断、再安装、再测试；只有需求时，怎么拆关键词、找候选、做筛选。
 

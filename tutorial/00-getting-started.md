@@ -31,7 +31,7 @@
 阅读顺序：
 
 1. 快速扫一眼 [第 1 课](01-use-ppt-skill.md)，重点看 starter 是怎么组织输入、提示词和输出的。
-2. 直接看 [第 2 课：用 Trae 安装已知 Skill，再按需求找到新 Skill](02-high-star-skills.md)。
+2. 直接看 [第 2 课：用 Trae 安装已知 Skill，再按需求找到新 Skill](02-find-and-install-skills.md)。
 3. 如果你已经有 GitHub 地址，走第 2 课里的“路线 A”。
 4. 如果你只有需求，还不知道用哪个项目，走第 2 课里的“路线 B”。
 5. 找到可用 Skill 后，再回到第 1 课的思路，把它整理成自己的 starter。

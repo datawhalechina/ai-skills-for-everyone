@@ -38,7 +38,7 @@
 1. [第 1 课：用开源 PPT Skill 生成可编辑 PPT](tutorial/01-use-ppt-skill.md)  
    面向完全普通用户。目标是先跑通，不讲太多概念。
 
-2. [第 2 课：用 Trae 安装已知 Skill，再按需求找到新 Skill](tutorial/02-high-star-skills.md)  
+2. [第 2 课：用 Trae 安装已知 Skill，再按需求找到新 Skill](tutorial/02-find-and-install-skills.md)  
    已经有地址时，学会让 Trae 先判断、再安装、再测试；只有需求时，学会拆关键词、找候选、做筛选。
 
 3. [第 3 课：使用我们维护的 Skill 库](tutorial/03-use-skill-library.md)  
