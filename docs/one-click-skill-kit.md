@@ -27,7 +27,7 @@ Skill Kit 是给普通人使用开源大 Skill 的包装层。它不替代原项
 - `tutorial/`：解释普通人怎么用。
 - `kits/`：提供尽量开箱即用的工作区或封装方案。
 
-简单说：`catalog` 可信，`guides` 可读，`kits` 可用。
+简单说：`catalog` 可信，`tutorial` 可读，`kits` 可用。
 
 ## 开箱程度分级
 
@@ -115,7 +115,7 @@ PPT Master 的第一版 Kit 不需要做成完整应用。先做一个预置工�
 3. 放一份 `prompts/normal-use.txt`。
 4. 放一份不涉及版权和隐私的 `samples/sample-source.md`。
 5. 写 Windows 和 macOS/Linux 的环境检查脚本。
-6. 写 GitHub 打不开时的备用说明：国内镜像、离线安装包、别人帮忙下载 ZIP。
+6. 写 GitHub 打不开时的备用说明：可用的软件源、离线安装包、别人帮忙下载 ZIP。
 7. 先不自动安装一切，先检查 Python、Node、Agent 工作区和依赖是否齐。
 
 如果这个工作区能让一个非技术用户在别人帮忙装好一次后反复使用，第一阶段就算成功。

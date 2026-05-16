@@ -1,3 +1,29 @@
+---
+id: example-skill
+name: Skill 名称
+source_type: github
+source_url: https://github.com/example/example-skill
+repo: example/example-skill
+author: 作者或组织
+license: MIT
+category: writing-and-office
+category_name: 写作与办公
+subcategory: example-subcategory
+subcategory_name: 示例小类
+recommendation_slot: easiest
+status: recommended
+difficulty: beginner
+stars: ""
+forks: ""
+latest_release: ""
+checked_at: 2026-05-16
+starter_path: ""
+tutorial_path: ""
+collection_path: ../../collections/example.md
+tags:
+  - example
+---
+
 # Skill 名称
 
 ## 基本信息
@@ -65,4 +91,3 @@
 ## 结论
 
 一句话说明是否推荐收录，以及为什么。
-

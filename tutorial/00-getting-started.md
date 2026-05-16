@@ -2,7 +2,7 @@
 
 别急着从第 1 课开始读。
 
-不同人来这里，起点不一样。有的人第一次听说 Agent，有的人已经天天用 Trae 或 Cursor，有的人用过 Skill，只是想找更多现成的；还有的人已经会自己写工作流，只想看看这个项目怎么组织 Skill 库。
+不同人来这里，起点不一样。有的人第一次听说 Agent，有的人已经天天用 Trae 或其他编辑器型 Agent，有的人用过 Skill，只是想找更多现成的；还有的人已经会自己写工作流，只想看看这个项目怎么组织 Skill 库。
 
 先按下面选一条路线。选完再往下看，会省很多时间。
 
@@ -24,7 +24,7 @@
 
 ## 我用过 Agent，但没用过 Skill
 
-如果你已经用过 Trae、Cursor、Claude Code、Copilot Agent 或命令行型 Agent，但没装过 Skill，走这条。
+如果你已经用过 Trae、Copilot Agent、编辑器型 Agent 或命令行型 Agent，但没装过 Skill，走这条。
 
 你不需要从“什么是 Agent”开始。你的重点是：学会让 Agent 安装一个已知 Skill，或者按需求帮你找 Skill。
 

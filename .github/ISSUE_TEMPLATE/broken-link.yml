@@ -1,0 +1,55 @@
+name: 报告链接或下载问题
+description: 报告链接失效、备用下载失效、版本信息过期等问题
+title: "[链接问题] "
+labels:
+  - broken-link
+body:
+  - type: input
+    id: page
+    attributes:
+      label: 出问题的页面
+      description: 贴出本仓库里的页面链接或文件路径。
+      placeholder: catalog/writing-and-office/ppt-master.md
+    validations:
+      required: true
+
+  - type: input
+    id: broken_url
+    attributes:
+      label: 出问题的链接
+      description: 哪个链接打不开、跳错、失效或版本不对？
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+
+  - type: dropdown
+    id: problem_type
+    attributes:
+      label: 问题类型
+      options:
+        - 原始链接打不开
+        - 备用下载打不开
+        - 版本信息过期
+        - 许可证信息不对
+        - 指向了错误页面
+        - 其他问题
+    validations:
+      required: true
+
+  - type: textarea
+    id: detail
+    attributes:
+      label: 具体情况
+      description: 你看到的错误、截图文字、跳转结果，或者你确认过的新链接。
+      placeholder: 打开后显示 404。原项目现在迁移到了……
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested_fix
+    attributes:
+      label: 建议怎么修
+      description: 如果你知道新链接、正确版本或替代下载方式，可以写在这里。
+      placeholder: 建议改成 https://github.com/new-owner/new-repo
+    validations:
+      required: false

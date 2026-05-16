@@ -60,7 +60,7 @@
 | 标签 | 含义 |
 | --- | --- |
 | 直接可用 | 打开网页、安装插件或复制提示词就能试。 |
-| Agent 可用 | 需要 Trae、Claude Code、VS Code Copilot、命令行型 Agent 这类工具。 |
+| Agent 可用 | 需要 Trae、VS Code Copilot Agent、命令行型 Agent 这类工具。 |
 | 本地安装 | 需要 Python、Node、命令行或本地依赖。 |
 | 开发者友好 | 普通人不建议直接上手，但适合开发者改造。 |
 

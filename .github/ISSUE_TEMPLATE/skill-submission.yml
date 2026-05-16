@@ -1,0 +1,114 @@
+name: 推荐一个 Skill
+description: 推荐一个值得收录的开源 Skill
+title: "[Skill 推荐] "
+labels:
+  - skill-submission
+body:
+  - type: markdown
+    attributes:
+      value: |
+        谢谢你帮大家找 Skill。
+
+        这个项目不是链接大全。请尽量说明它解决什么任务、适合放在哪个小类、许可证是否清楚、普通人能不能用起来。
+
+  - type: input
+    id: skill_name
+    attributes:
+      label: Skill 名称
+      description: 项目名、仓库名或 Skill 名称。
+      placeholder: PPT Master
+    validations:
+      required: true
+
+  - type: input
+    id: source_url
+    attributes:
+      label: 来源链接
+      description: 优先填写 GitHub 仓库、官方文档或原始发布地址。
+      placeholder: https://github.com/owner/repo
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: 大类
+      description: 它最适合放在哪个大类？
+      options:
+        - 写作与办公
+        - 学习与研究
+        - 内容创作
+        - 开发与调试
+        - 自动化流程
+        - 还不确定
+    validations:
+      required: true
+
+  - type: input
+    id: subcategory
+    attributes:
+      label: 小类
+      description: 例如 PPT 生成、会议纪要、长文档摘要、论文阅读、文件处理。
+      placeholder: PPT 生成 / 大纲生成
+    validations:
+      required: true
+
+  - type: dropdown
+    id: recommendation_slot
+    attributes:
+      label: 你觉得它适合哪个推荐位？
+      options:
+        - 最省心
+        - 进阶
+        - 可改造
+        - 还不确定
+    validations:
+      required: true
+
+  - type: input
+    id: license
+    attributes:
+      label: 许可证
+      description: 如果你没找到许可证，就写“没找到”。
+      placeholder: MIT / Apache-2.0 / 没找到
+    validations:
+      required: true
+
+  - type: textarea
+    id: why
+    attributes:
+      label: 为什么值得收录？
+      description: 说具体一点：它解决什么任务，输出什么，为什么比普通 prompt 更有用。
+      placeholder: 它可以把 Markdown / PDF / 文档材料生成可编辑 PPTX，适合办公汇报场景。
+    validations:
+      required: true
+
+  - type: textarea
+    id: usage
+    attributes:
+      label: 你试过吗？怎么用？
+      description: 如果你已经试过，写一下环境、安装方式、输入材料和输出结果。没试过也请说明。
+      placeholder: 我在 Windows + Trae 下试过，按 README 安装依赖后可以生成 .pptx。
+    validations:
+      required: false
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: 风险或限制
+      description: 比如 GitHub 打不开、依赖复杂、需要 API Key、输出要人工复核、许可证不清楚。
+      placeholder: 需要 Python 环境；生成结果需要人工核对事实和数据。
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: 提交前确认
+      options:
+        - label: 我提供的是原始来源链接，不是来路不明的搬运链接。
+          required: true
+        - label: 我已经尽量检查许可证、文档和基本可用性。
+          required: true
+        - label: 这个 Skill 不用于绕过规则、侵犯隐私、伪造身份或明显侵权。
+          required: true

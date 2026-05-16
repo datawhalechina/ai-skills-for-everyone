@@ -16,6 +16,22 @@
 | 任务拆解 / 项目计划 | 目标、期限、限制 | 任务列表、里程碑、风险 | 中 |
 | 文档润色 / 去模板感 | 草稿、目标读者 | 更自然的正式文本 | 中 |
 
+## 小类推荐位
+
+每个小类最终尽量只留 2 到 3 个正式推荐：一个最省心，一个进阶，一个适合改造。最省心的位置可以是独立 Skill，也可以是我们做好的 starter 路线。现在只有 PPT 生成小类跑通了第一条完整样例，其他小类先留空，后面逐个补。
+
+| 小类 | 最省心 | 进阶 | 可改造 | 状态 |
+| --- | --- | --- | --- | --- |
+| PPT 生成 / 大纲生成 | [PPT Master Starter](../kits/ppt-master-starter/README.md) | [PPT Master](../catalog/writing-and-office/ppt-master.md) | 待补充 | 已有完整上手路线 |
+| 周报 / 状态更新 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
+| 商务邮件改写 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
+| 会议纪要整理 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
+| 长文档摘要 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
+| 表格分析报告 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
+| 流程文档 / SOP | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
+| 任务拆解 / 项目计划 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
+| 文档润色 / 去模板感 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
+
 ## 搜罗顺序
 
 1. 先找会议纪要、商务邮件、周报这三类。它们高频、边界清楚，也容易判断质量。
@@ -44,9 +60,10 @@
 
 ## 先看这些
 
-| Skill | 适合场景 | 难度 | 状态 |
-| --- | --- | --- | --- |
-| [PPT Master](../catalog/writing-and-office/ppt-master.md) | 从 PDF、DOCX、URL、Markdown 或文字材料生成可编辑 `.pptx` | 进阶 / 开发者 | 推荐收录，已有[第 1 课教程](../tutorial/01-use-ppt-skill.md)和[开箱工作区](../kits/ppt-master-starter/README.md) |
+| 推荐位 | Skill | 适合场景 | 难度 | 状态 |
+| --- | --- | --- | --- | --- |
+| 最省心 | [PPT Master Starter](../kits/ppt-master-starter/README.md) | 普通人按教程生成可编辑 `.pptx` | 新手 | 已有[第 1 课教程](../tutorial/01-use-ppt-skill.md) |
+| 进阶 | [PPT Master](../catalog/writing-and-office/ppt-master.md) | 从 PDF、DOCX、URL、Markdown 或文字材料生成可编辑 `.pptx` | 进阶 / 开发者 | 推荐收录 |
 
 ## 筛选重点
 

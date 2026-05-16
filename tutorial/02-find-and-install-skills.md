@@ -152,7 +152,7 @@ Trae 可能会给你几种路线：
 [PPT / 周报 / 会议纪要 / 分析报告 / SOP / 邮件 / 表格]
 
 我的使用环境是：
-[Trae / Cursor / Claude Code / VS Code Copilot Agent / 命令行型 Agent]
+[Trae / VS Code Copilot Agent / 命令行型 Agent / 其他能读写本地文件的 Agent]
 
 我的限制是：
 [GitHub 经常打不开 / 不懂命令行 / 不能上传敏感材料 / 预算低 / 需要中文]

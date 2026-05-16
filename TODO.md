@@ -4,9 +4,9 @@
 
 ## 当前定位
 
-**AI Skills for Everyone：开源 AI Skill 教程与社区索引。**
+**AI Skills for Everyone：面向普通人的开源优质 AI Skill 搜罗库。**
 
-我们先教普通人用起来，再按场景维护可靠 Skill。这个项目不是单纯的 GitHub 链接合集，也不是默认复制第三方 Skill 的镜像站。
+我们按大类和小类搜罗可靠 Skill，每个小类尽量只保留 2 到 3 个推荐位：一个最省心，一个进阶，一个适合改造。教程和 starter 是为了让普通人真的用起来，不是为了堆概念。
 
 ## 当前状态
 
@@ -15,6 +15,7 @@
 - 当前已完成第一次上传。
 - 仓库已有 `LICENSE`。
 - 第一条完整样例：PPT Master。
+- 当前策略已改成“精选 Skill Hub + 教程入口”。
 
 ## 已完成
 
@@ -62,24 +63,26 @@
 
 ### 1. 让它更像社区 Skill Hub
 
-- [ ] README 改成双入口：我要学习教程 / 我要浏览 Skill Hub。
-- [ ] 新增 `catalog/INDEX.md`，做所有 Skill 的总表。
-- [ ] 给 Skill 卡片加 YAML frontmatter，方便以后生成索引。
-- [ ] 新增 `.github/ISSUE_TEMPLATE/skill-submission.yml`。
-- [ ] 新增 `.github/ISSUE_TEMPLATE/broken-link.yml`。
-- [ ] 新增 `.github/pull_request_template.md`。
-- [ ] 新增 `docs/review-process.md`，写清楚候选、观察中、推荐、不推荐的流程。
-- [ ] 新增 `docs/third-party-policy.md`，写清楚第三方 Skill、备用下载、许可证和镜像边界。
+- [x] README 改成“教程入口 + Skill Hub 入口”。
+- [x] 新增 `catalog/INDEX.md`，做所有 Skill 的总表。
+- [x] 定下每个小类的 2 到 3 个推荐位：最省心 / 进阶 / 可改造。
+- [x] 给 Skill 卡片加 YAML frontmatter，方便以后生成索引。
+- [x] 新增 `.github/ISSUE_TEMPLATE/skill-submission.yml`。
+- [x] 新增 `.github/ISSUE_TEMPLATE/broken-link.yml`。
+- [x] 新增 `.github/pull_request_template.md`。
+- [x] 新增 `docs/review-process.md`，写清楚候选、观察中、推荐、不推荐的流程。
+- [x] 新增 `docs/third-party-policy.md`，写清楚第三方 Skill、备用下载、许可证和镜像边界。
 
 ### 2. 扩写 Skill 内容
 
+- [x] 先把写作与办公拆成小类推荐位表，每个小类明确缺哪个位置。
 - [ ] 写作与办公继续补：周报 / 状态更新。
 - [ ] 写作与办公继续补：商务邮件改写。
 - [ ] 写作与办公继续补：会议纪要整理。
 - [ ] 写作与办公继续补：长文档摘要。
 - [ ] 写作与办公继续补：表格分析报告。
 - [ ] 写作与办公继续补：流程文档 / SOP。
-- [ ] 每个场景至少先收 3 个候选，再决定是否写正式卡片。
+- [ ] 每个小类至少先收 3 个候选，再决定谁进“最省心 / 进阶 / 可改造”。
 - [ ] 每个正式推荐 Skill 尽量补一个普通人上手路线。
 - [ ] 对复杂 Skill，再考虑做 starter kit。
 
@@ -102,11 +105,11 @@
 
 ## 近期优先级
 
-1. 先把 README 改成“教程入口 + Skill Hub 入口”双入口。
-2. 新增 `catalog/INDEX.md`，哪怕第一版只有 PPT Master。
-3. 给 PPT Master 卡片加 YAML frontmatter，定下元数据格式。
-4. 新增 GitHub issue / PR 模板，让别人知道怎么贡献。
-5. 写第二个 Skill 卡片，优先从写作与办公里选。
+1. 写第二个 Skill 卡片，优先从写作与办公里选。
+2. 给每个小类先补 3 个候选来源，再筛成推荐位。
+3. 第 0 课补一张“你该走哪条路线”的简单表格。
+4. 第 3 课补一张 Skill 卡片阅读示例。
+5. 第 4 课补一个“周报 Skill”样例文件夹。
 
 ## 收录原则提醒
 

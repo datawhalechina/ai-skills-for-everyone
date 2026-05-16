@@ -1,3 +1,33 @@
+---
+id: ppt-master
+name: PPT Master
+source_type: github
+source_url: https://github.com/hugohe3/ppt-master
+repo: hugohe3/ppt-master
+author: Hugo He / hugohe3
+license: MIT
+category: writing-and-office
+category_name: 写作与办公
+subcategory: ppt-generation
+subcategory_name: PPT 生成 / 大纲生成
+recommendation_slot: advanced
+status: recommended
+difficulty: intermediate
+stars: "约 16.6k"
+forks: "约 1.6k"
+latest_release: "v2.7.0, 2026-05-13"
+checked_at: 2026-05-15
+starter_path: ../../kits/ppt-master-starter/README.md
+tutorial_path: ../../tutorial/01-use-ppt-skill.md
+collection_path: ../../collections/writing-and-office.md
+tags:
+  - ppt
+  - pptx
+  - presentation
+  - office
+  - agent-skill
+---
+
 # PPT Master
 
 ## 基本信息
@@ -8,7 +38,7 @@
 - 作者或组织：Hugo He / `hugohe3`
 - 仓库或项目名称：`hugohe3/ppt-master`
 - 许可证：MIT
-- GitHub stars：约 16.5k
+- GitHub stars：约 16.6k
 - Forks：约 1.6k
 - 最新发布：v2.7.0，2026-05-13
 - 核查日期：2026-05-15
@@ -21,7 +51,7 @@ PPT Master 是一个用于生成可编辑 PowerPoint 文件的 Agent Skill，可
 ## 适合谁
 
 - 需要把报告、文章、网页或长文档做成演示文稿的人。
-- 愿意在 Trae、Claude Code、VS Code Copilot、命令行型 Agent 等环境里跑流程的人。
+- 愿意在 Trae、VS Code Copilot Agent、命令行型 Agent 等环境里跑流程的人。
 - 需要可编辑 PPT，而不是每页一张图片的人。
 
 ## 典型场景
@@ -38,7 +68,7 @@ PPT Master 是一个用于生成可编辑 PowerPoint 文件的 Agent Skill，可
 1. 准备 Python 3.10+。
 2. 克隆仓库或下载 ZIP。
 3. 运行 `pip install -r requirements.txt`。
-4. 在支持 Agent 的工具里使用，比如 Trae、Claude Code、VS Code Copilot、命令行型 Agent。
+4. 在支持本地项目读写和命令执行的 Agent 工具里使用，比如 Trae、VS Code Copilot Agent、命令行型 Agent。
 5. 把 PDF、DOCX、URL、Markdown 或文本材料交给 Agent，让它按 `skills/ppt-master/SKILL.md` 生成 PPT。
 
 项目也提供 Skill 安装方式：
@@ -47,7 +77,7 @@ PPT Master 是一个用于生成可编辑 PowerPoint 文件的 Agent Skill，可
 npx skills add hugohe3/ppt-master
 ```
 
-Claude Code 里也可以通过 plugin marketplace 安装，但安装 Skill 文件后仍要按项目说明安装 Python 依赖。
+部分 Agent 生态也支持从 marketplace 或 Skill 管理器安装，但安装 Skill 文件后仍要按项目说明安装 Python 依赖。
 
 ## 示例输入
 
