@@ -4,9 +4,11 @@
 
 最省事的顺序：
 
-1. 先试下面的百度网盘备用链接。
-2. 如果网盘也不行，再把这一页发给能正常访问 GitHub 的朋友、同事或同学，请他帮你下载 ZIP。
-3. 下载后一定要先解压。不要直接把 `.zip` 压缩包路径发给 Trae。
+1. 先试 GitHub 官方链接。
+2. 如果 GitHub 打不开，试 AtomGit 官方镜像。
+3. 如果 AtomGit 也不行，再试下面的百度网盘备用链接。
+4. 如果网盘也不行，再把这一页发给能正常访问 GitHub 或 AtomGit 的朋友、同事或同学，请他帮你下载 ZIP。
+5. 下载后一定要先解压。不要直接把 `.zip` 压缩包路径发给 Trae。
 
 ## 需要下载什么
 
@@ -30,9 +32,27 @@ https://github.com/hugohe3/ppt-master
 https://github.com/hugohe3/ppt-master/archive/refs/heads/main.zip
 ```
 
+## 官方镜像：AtomGit
+
+PPT Master 官方 README 里也列了 AtomGit 镜像。GitHub 打不开时，可以优先试这个：
+
+```text
+https://atomgit.com/hugohe3/ppt-master
+```
+
+打开后点 `克隆/下载`，再点 `下载ZIP`。
+
+如果你会用 Git，也可以让 Trae Agent 执行：
+
+```text
+git clone https://atomgit.com/hugohe3/ppt-master.git
+```
+
+注意：AtomGit 是官方 README 列出的镜像，但项目主仓库仍然是 GitHub。能打开 GitHub 时，优先用 GitHub；GitHub 打不开时，再用 AtomGit。
+
 ## 备用镜像：百度网盘
 
-如果 GitHub 打不开，可以先用这个备用链接。
+如果 GitHub 和 AtomGit 都打不开，可以再用这个备用链接。
 
 ```text
 百度网盘链接：https://pan.baidu.com/s/5kBWJzcCWbbSdSmxG4lv8gg 

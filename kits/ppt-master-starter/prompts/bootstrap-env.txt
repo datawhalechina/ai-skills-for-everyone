@@ -27,12 +27,13 @@ https://github.com/hugohe3/ppt-master
 
 - 如果我选 1，再考虑在线安装。即使在线安装，也要先给中文命令确认卡，等我确认后再执行。
 - 如果我选 2 或 3，不要执行 `git clone`，也不要默认用 `npx skills add` 去网上拉项目。请改走 ZIP 或本地文件夹路线。
-- 如果走 ZIP 路线，请先让我打开 `DOWNLOADS.md`。如果里面有百度网盘备用链接，优先提醒我使用百度网盘；如果网盘不可用，再使用下面的官方地址：
+- 如果走 ZIP 路线，请先让我打开 `DOWNLOADS.md`。优先提醒我使用 AtomGit 官方镜像；如果 AtomGit 不可用，再提醒我使用百度网盘备用链接；如果网盘也不可用，再使用下面的官方地址：
+  - PPT Master AtomGit 镜像：https://atomgit.com/hugohe3/ppt-master
   - PPT Master 固定版本 ZIP：https://github.com/hugohe3/ppt-master/archive/refs/tags/v2.7.0.zip
   - PPT Master 项目主页：https://github.com/hugohe3/ppt-master
   - PPT Master 最新代码 ZIP：https://github.com/hugohe3/ppt-master/archive/refs/heads/main.zip
-- 如果 `DOWNLOADS.md` 里有百度网盘备用链接，也可以提醒我使用。但请说明它是非官方备用镜像，能打开 GitHub 时优先用官方链接。
-- 如果我打不开这些链接，请让我把下载地址发给能打开 GitHub 的人，请对方下载 ZIP，解压到和 `ppt-master-starter` 同一个大文件夹里。
+- 如果 `DOWNLOADS.md` 里有百度网盘备用链接，也可以提醒我使用。但请说明它是非官方备用镜像；AtomGit 是官方 README 列出的镜像；能打开 GitHub 时优先用 GitHub 主仓库。
+- 如果我打不开这些链接，请让我把下载地址发给能打开 GitHub 或 AtomGit 的人，请对方下载 ZIP，解压到和 `ppt-master-starter` 同一个大文件夹里。
 - 下载 ZIP 后，请提醒我必须先解压。不要把 `.zip` 文件本身当成本地 PPT Master 文件夹。
 - 如果我已经有 PPT Master 文件夹，请让我直接告诉你本地路径，然后从这个本地路径接入，不要再联网下载一次。
 - 不要让我回复“可以执行 #3 #2 #4”这种技术编号。请用普通话确认，比如：“我将先检查环境，再从本地 PPT Master 文件夹安装依赖，最后跑测试。可以执行吗？”

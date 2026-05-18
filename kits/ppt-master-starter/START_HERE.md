@@ -57,11 +57,16 @@ ai-skills/
 安装方式：
 
 1. 打开 Trae 官网：https://www.trae.cn/
-2. 下载适合你电脑的版本。
-3. 按普通软件方式安装。
-4. 打开 Trae 并登录。
-5. 如果你需要自定义模型 API，先在 Trae 的设置里找到模型或 API 配置，把自己的 API 接好。
-6. 在 Trae 里选择 `Open Folder`，打开你的 `ppt-master-starter` 文件夹。
+2. 点击右上角下载中心
+3. 根据您的电脑版本选择下载对应版本的trae ide
+4. 按普通软件方式安装。
+5. 打开 Trae 并登录。
+6. 如果你需要自定义模型 API，先在 Trae 的设置里找到模型或 API 配置，把自己的 API 接好。
+7. 在 Trae 里选择 `Open Folder`，打开你的 `ppt-master-starter` 文件夹。
+
+下载中心里大概是这个样子，按你的电脑系统选择对应版本即可：
+
+![Trae 下载中心页面示例](assets/trae-download-center.png)
 
 注意：请打开整个 `ppt-master-starter` 文件夹，不要只打开 `START_HERE.md` 这一个文件。
 
@@ -150,15 +155,23 @@ ZIP 路线的意思很简单：先拿到 PPT Master 压缩包，解压到固定�
 DOWNLOADS.md
 ```
 
-里面有百度网盘备用链接，也有可以发给别人帮忙下载的官方下载链接。
+里面有 GitHub 官方链接、AtomGit 官方镜像、百度网盘备用链接，也有可以发给别人帮忙下载的清单。
 
-如果你完全打不开 GitHub，先试百度网盘。网盘也不行，再让别人帮你下载这个固定版本 ZIP：
+如果你完全打不开 GitHub，先试 AtomGit 官方镜像：
+
+```text
+https://atomgit.com/hugohe3/ppt-master
+```
+
+打开后点 `克隆/下载`，再点 `下载ZIP`。
+
+如果 AtomGit 也不行，再试百度网盘。网盘也不行，再让别人帮你下载这个固定版本 ZIP：
 
 ```text
 https://github.com/hugohe3/ppt-master/archive/refs/tags/v2.7.0.zip
 ```
 
-注意：百度网盘只是备用镜像，不是官方来源。下载后一定要先解压，不要直接把 `.zip` 文件路径给 Trae。
+注意：AtomGit 是 PPT Master 官方 README 列出的镜像；百度网盘只是备用镜像，不是官方来源。下载后一定要先解压，不要直接把 `.zip` 文件路径给 Trae。
 
 如果 Trae 让你回复“可以执行 #3 #2 #4”这种编号，不要直接照抄。让它重新用普通话说明每一步：先做什么、会不会联网、会改哪里、为什么要这么做。
 
@@ -199,7 +212,7 @@ GitHub 打不开时，不建议一上来就试 GitHub 下载。GitHub、npm、Py
 
 1. 先告诉 Trae：我不确定 GitHub 能不能打开，或者这台电脑经常打不开 GitHub。
 2. 让 Trae 先走 ZIP 或本地文件夹路线，不要直接执行 `git clone`。
-3. 如果本地没有 ZIP，就打开 `DOWNLOADS.md`。先试百度网盘；网盘不行，再把下载链接发给能打开 GitHub 的人。
+3. 如果本地没有 ZIP，就打开 `DOWNLOADS.md`。先试 AtomGit 官方镜像；AtomGit 不行，再试百度网盘；都不行，再把下载链接发给能打开 GitHub 或 AtomGit 的人。
 4. 如果需要 Python 或 Node.js，优先用官网、国内镜像或离线安装包。
 5. 如果需要 pip 或 npm 依赖，让 Trae Agent 优先尝试国内镜像。
 6. 如果卡在 Trae 登录或模型调用，那就不是本地依赖问题，只能换网络、换时间，或者检查自定义 API 配置。
@@ -212,7 +225,7 @@ GitHub 打不开时，不建议一上来就试 GitHub 下载。GitHub、npm、Py
 请先问我 GitHub 能不能打开，不要直接执行 git clone。
 
 如果我不能访问 GitHub，请改走 ZIP 或本地文件夹路线。
-如果我本地没有 ZIP，请让我打开 DOWNLOADS.md。优先提醒我使用里面的百度网盘备用链接；如果网盘也不行，再把 PPT Master 官方下载地址发给我，让别人帮我下载。
+如果我本地没有 ZIP，请让我打开 DOWNLOADS.md。优先提醒我使用 AtomGit 官方镜像；如果 AtomGit 不行，再提醒我使用百度网盘备用链接；如果网盘也不行，再把 PPT Master 官方下载地址发给我，让别人帮我下载。
 下载后请提醒我先解压，再把解压后的文件夹路径告诉你。
 
 如果后面仍然卡住，再判断当前卡在哪一步：

@@ -79,6 +79,14 @@ npx skills add hugohe3/ppt-master
 
 部分 Agent 生态也支持从 marketplace 或 Skill 管理器安装，但安装 Skill 文件后仍要按项目说明安装 Python 依赖。
 
+GitHub 打不开时，可以使用原项目官方 README 列出的 AtomGit 镜像：
+
+```text
+https://atomgit.com/hugohe3/ppt-master
+```
+
+普通用户仍然建议先走 [PPT Master Starter](../../kits/ppt-master-starter/README.md)，里面会按 GitHub、AtomGit、备用下载的顺序处理。
+
 ## 示例输入
 
 ```text

@@ -95,9 +95,10 @@ Windows 安装 Python 时，要勾选 `Add python.exe to PATH`。如果没勾选
 
 如果我不能访问 GitHub，请不要执行 git clone，也不要默认用 npx skills add。
 请改成 ZIP 或本地文件夹路线。先让我打开 DOWNLOADS.md。
-如果 DOWNLOADS.md 里有百度网盘备用链接，请优先提醒我用网盘下载。
+如果 DOWNLOADS.md 里有 AtomGit 官方镜像，请优先提醒我用 AtomGit 下载 ZIP。
+如果 AtomGit 也打不开，再提醒我用百度网盘备用链接。
 下载后请提醒我必须先解压，不要直接把 .zip 文件路径给你。
-如果我看不到这个文件，请把 PPT Master 的官方下载地址发给我，让别人帮我下载 ZIP，解压后再把路径告诉你。
+如果我看不到这个文件，请把 PPT Master 的 GitHub 或 AtomGit 地址发给我，让别人帮我下载 ZIP，解压后再把路径告诉你。
 不要让我回复“可以执行 #3 #2 #4”这种技术编号。请把每一步写成普通话。
 ```
 
@@ -107,10 +108,16 @@ Windows 安装 Python 时，要勾选 `Add python.exe to PATH`。如果没勾选
 https://github.com/hugohe3/ppt-master/archive/refs/tags/v2.7.0.zip
 ```
 
+GitHub 打不开时，也可以试 AtomGit 官方镜像：
+
+```text
+https://atomgit.com/hugohe3/ppt-master
+```
+
 如果已经卡住了，再判断到底卡在哪一层：
 
 - Trae 登录或模型服务：这类问题本地解决不了，只能换网络、换时间，或找能正常使用 Trae 的环境。
-- GitHub 下载：让有网络的人下载 PPT Master ZIP，拷贝到你的工作区。
+- GitHub / AtomGit 下载：让能打开的人下载 PPT Master ZIP，拷贝到你的工作区。
 - Python 或 Node.js 安装包下载：让有网络的人下载离线安装包，或者使用可信镜像。
 - pip 或 npm 依赖下载：让 Trae Agent 尝试国内镜像。
 
@@ -121,7 +128,7 @@ https://github.com/hugohe3/ppt-master/archive/refs/tags/v2.7.0.zip
 请先判断卡在哪一步，不要反复重试。
 
 如果是 pip 或 npm 依赖下载，请优先尝试国内镜像。
-如果是 GitHub 下载，请告诉我需要别人帮忙下载哪个 ZIP。
+如果是 GitHub 或 AtomGit 下载，请告诉我需要别人帮忙下载哪个 ZIP。
 如果是 Trae 登录或模型服务，请直接告诉我这是网络问题。
 ```
 
