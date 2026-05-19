@@ -31,6 +31,16 @@
 - `project planning agent workflow`
 - `humanize business writing prompt`
 
+## 开发与调试关键词
+
+- `frontend skill`
+- `frontend agent skill`
+- `frontend design skill`
+- `frontend ui engineering skill`
+- `web artifact skill`
+- `AI frontend page generation`
+- `React Tailwind agent skill`
+
 ## 来源类型
 
 - 官方示例仓库。
@@ -49,3 +59,7 @@
 | 2026-05-16 | 周报 / 状态更新：`MLSysOps/MLE-agent` | MIT，约 1.6k stars，支持从 GitHub 或本地 Git 仓库生成工作报告 | 已建 catalog 卡片，标为可参考 |
 | 2026-05-16 | 周报 / 状态更新：`github/gh-aw` | GitHub Agentic Workflows，MIT，约 4.5k stars，可改造成定时项目状态更新 | 暂不进入周报正式推荐位；周报可改造方向优先放在自研 Weekly Status 上 |
 | 2026-05-16 | 周报 / 状态更新：自研路线 | 暂时没有找到同时满足高星、普通人开箱、明确 Skill 结构的周报项目 | 已建 Weekly Status 轻 Skill 和 starter，作为最省心路线 |
+| 2026-05-19 | 前端页面 / 小应用生成：`anthropics/skills/frontend-design` | Apache-2.0，所属仓库约 137k stars，适合快速生成更有设计感的前端页面 | 已建 catalog 卡片，放入最省心推荐位 |
+| 2026-05-19 | 前端页面 / 小应用生成：`addyosmani/agent-skills/frontend-ui-engineering` | MIT，所属仓库约 43.5k stars，强调组件、状态、响应式和可访问性 | 已建 catalog 卡片，放入进阶推荐位 |
+| 2026-05-19 | 前端页面 / 小应用生成：`anthropics/skills/web-artifacts-builder` | Apache-2.0，带 React + TypeScript + Vite + Tailwind + shadcn/ui 脚手架和打包脚本 | 已建 catalog 卡片，放入可改造推荐位 |
+| 2026-05-19 | 前端页面 / 小应用生成：`MiniMax-AI/skills/frontend-dev` | MIT，所属仓库约 11.9k stars，适合首页、营销页、产品页和强动效页面 | 已建 catalog 卡片，作为高级视觉补充 |

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>web-artifacts-builder / Case 3</title>
+  <link rel="stylesheet" href="shared.css" />
+  <script defer src="shared.js"></script>
+</head>
+<body class="page wab" data-console-page>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">Agent Console Artifact</div>
+      <nav class="nav"><span>任务：配置 starter</span><span>状态：等待确认</span><span>风险：中</span></nav>
+    </header>
+    <section class="hero">
+      <div class="panel">
+        <span class="eyebrow">web-artifacts-builder output · Case 3</span>
+        <h1>Agent 任务运行台</h1>
+        <p class="lead">这是一个适合打包成 artifact 的复杂交互页面：步骤、命令审核、文件变化、日志都在同一个工作台里。</p>
+      </div>
+      <aside class="panel">
+        <h2>风险过滤</h2>
+        <div class="status-row"><button class="filter-btn active" data-risk-filter="all">全部</button><button class="filter-btn" data-risk-filter="high">高</button><button class="filter-btn" data-risk-filter="mid">中</button><button class="filter-btn" data-risk-filter="low">低</button></div>
+        <p class="notice" data-action-status>等待用户操作。</p>
+      </aside>
+    </section>
+    <section class="console">
+      <aside class="steps">
+        <div class="step">完成：读取 inputs/</div>
+        <div class="step">完成：生成执行计划</div>
+        <div class="step" aria-current="step">等待：命令审核</div>
+        <div class="step">待执行：导出结果</div>
+      </aside>
+      <div class="command-list">
+        <details class="command" data-risk="low" open><summary>node --version</summary><p>中文解释：读取本机 Node 版本。</p><p class="risk-low">低风险。</p><button class="btn" data-decision="allow">允许</button> <button class="btn secondary" data-decision="deny">拒绝</button></details>
+        <details class="command" data-risk="mid"><summary>npx vite --host 127.0.0.1</summary><p>中文解释：启动本地开发服务器。</p><p class="risk-mid">中风险：会占用本地端口。</p><button class="btn" data-decision="allow">允许</button> <button class="btn secondary" data-decision="deny">拒绝</button></details>
+        <details class="command" data-risk="high"><summary>git clean -fd</summary><p>中文解释：清理未跟踪文件。</p><p class="risk-high">高风险：可能删除测试输出。</p><button class="btn" data-decision="allow">允许</button> <button class="btn secondary" data-decision="deny">拒绝</button></details>
+      </div>
+      <aside class="files">
+        <div class="file">新增：src/App.tsx</div>
+        <div class="file">新增：src/components/ui/button.tsx</div>
+        <div class="file">修改：package.json</div>
+        <div class="event">20:28 初始化 artifact<br>20:31 等待命令确认</div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>

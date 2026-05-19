@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>frontend-design / Case 2</title>
+  <link rel="stylesheet" href="shared.css" />
+  <script defer src="shared.js"></script>
+</head>
+<body class="page fd" data-hub-page>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">AI Skills for Everyone</div>
+      <nav class="nav"><a href="#">教程</a><a href="#">Skill 库</a><a href="#">Starter</a><a href="#">贡献</a></nav>
+    </header>
+    <section class="hero">
+      <div>
+        <span class="eyebrow">frontend-design output · Case 2</span>
+        <h1>先选任务，再选 Skill</h1>
+        <p class="lead">这个首页像一张路线图：新手先跑 starter，熟手看进阶卡片，贡献者直接进入评测。</p>
+        <div class="actions"><button class="btn">新手从这里开始</button><button class="btn secondary">我已经会用 Agent</button><button class="btn secondary">贡献 Skill</button></div>
+      </div>
+      <aside class="panel"><h2>今天先别收藏链接</h2><p>先回答：你要做 PPT、周报、前端页面，还是自动化流程？</p></aside>
+    </section>
+    <section class="hub-layout">
+      <aside class="filters" aria-label="分类筛选">
+        <button class="filter-btn active" data-category-filter="all">全部</button>
+        <button class="filter-btn" data-category-filter="office">写作办公</button>
+        <button class="filter-btn" data-category-filter="research">学习研究</button>
+        <button class="filter-btn" data-category-filter="content">内容创作</button>
+        <button class="filter-btn" data-category-filter="dev">开发调试</button>
+        <button class="filter-btn" data-category-filter="automation">自动化流程</button>
+      </aside>
+      <div>
+        <div class="search-row"><input data-search aria-label="搜索 Skill" placeholder="搜索名称或场景，例如 PPT、周报、前端" /></div>
+        <div class="cards">
+          <article class="skill-card" data-card data-category="office"><strong>PPT Master Starter</strong><p>适合不会配置环境的办公用户。</p><span class="pill">最省心 · 有 starter</span></article>
+          <article class="skill-card" data-card data-category="office"><strong>Weekly Status</strong><p>把零散记录整理成领导可读周报。</p><span class="pill">最省心 · 有 starter</span></article>
+          <article class="skill-card" data-card data-category="dev"><strong>frontend-design</strong><p>让前端页面更有设计感。</p><span class="pill">候选 · 评测中</span></article>
+          <article class="skill-card" data-card data-category="dev"><strong>frontend-ui-engineering</strong><p>面向真实项目的前端工程约束。</p><span class="pill">候选 · 进阶</span></article>
+          <article class="skill-card" data-card data-category="automation"><strong>文件批处理 Skill</strong><p>整理下载、重命名、生成报告。</p><span class="pill">待搜罗</span></article>
+          <article class="skill-card" data-card data-category="content"><strong>短视频脚本</strong><p>从选题到分镜脚本。</p><span class="pill">待搜罗</span></article>
+        </div>
+        <div class="empty-state" data-empty>没有找到匹配的 Skill。换个关键词，或提交候选来源。</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

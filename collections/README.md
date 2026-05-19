@@ -19,7 +19,7 @@
 - [写作与办公](writing-and-office.md)：周报、邮件、会议纪要、长文档摘要、PPT、表格、SOP、项目计划、文档润色。
 - [学习与研究](learning-and-research.md)：资料整理、论文阅读、知识卡片、复习计划。
 - [内容创作](content-creation.md)：选题、文章、图片提示词、短视频脚本。
-- [开发与调试](coding-and-devtools.md)：前端、后端、测试、部署、日志分析。
+- [开发与调试](coding-and-devtools.md)：前端页面、小应用生成、后端、测试、部署、日志分析。
 - [自动化流程](automation-workflows.md)：重复任务、文件处理、数据同步。
 
 ## 每个合集怎么写

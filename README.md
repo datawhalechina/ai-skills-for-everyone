@@ -13,7 +13,7 @@ AI Skills for Everyone 是一个面向普通人的开源 AI Skill 精选库。
 - 进阶：功能更完整，但需要一点环境配置或 Agent 使用经验。
 - 可改造：适合轻技术用户或开发者继续改造成自己的流程。
 
-第一条完整样板是 PPT 生成。你可以跟着第 1 课，用开源 PPT Skill 把一份材料生成可编辑的 `.pptx`。现在也补了一个周报 / 状态更新轻 Skill 和 starter，后续会继续补邮件、会议纪要、长文档摘要、表格分析等办公场景。
+第一条完整样板是 PPT 生成。你可以跟着第 1 课，用开源 PPT Skill 把一份材料生成可编辑的 `.pptx`。现在也补了一个周报 / 状态更新轻 Skill 和 starter，并开始收录前端页面生成类 Skill。后续会继续补邮件、会议纪要、长文档摘要、表格分析等场景。
 
 ## 项目受众
 
@@ -46,6 +46,7 @@ AI Skills for Everyone 是一个面向普通人的开源 AI Skill 精选库。
 | [Weekly Status Starter](kits/weekly-status-starter/README.md) | 把零散工作记录整理成周报或项目状态更新。 | ✅ |
 | [Skill Hub 总表](catalog/INDEX.md) | 按大类、小类和推荐位整理已收录 Skill。 | 🚧 |
 | [写作与办公合集](collections/writing-and-office.md) | 周报、邮件、会议纪要、PPT、表格、SOP 等办公场景。 | 🚧 |
+| [开发与调试合集](collections/coding-and-devtools.md) | 前端页面、小应用生成、后端、测试、部署和日志分析。 | 🚧 |
 | [Datawhale 立项申请稿](docs/datawhale-proposal.md) | 面向 Datawhale 的项目申请材料。 | ✅ |
 | [第三方 Skill 处理原则](docs/third-party-policy.md) | 第三方 Skill、备用下载、许可证和镜像边界。 | ✅ |
 

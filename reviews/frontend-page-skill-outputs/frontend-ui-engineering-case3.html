@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>frontend-ui-engineering / Case 3</title>
+  <link rel="stylesheet" href="shared.css" />
+  <script defer src="shared.js"></script>
+</head>
+<body class="page eng" data-console-page>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">Agent 任务运行台</div>
+      <nav class="nav" aria-label="任务摘要"><span>状态：等待确认</span><span>耗时：08:12</span><span>风险等级：中</span></nav>
+    </header>
+    <section class="hero">
+      <div>
+        <span class="eyebrow">frontend-ui-engineering output · Case 3</span>
+        <h1>审核 Agent 的每一步，而不是盲目相信自动执行</h1>
+        <p class="lead">页面把复杂任务拆成可扫描的步骤、可展开的命令、明确的风险提示和文件改动列表。所有交互都使用原生按钮和 details，便于键盘访问。</p>
+      </div>
+      <aside class="panel" aria-labelledby="filters-title">
+        <h2 id="filters-title">风险过滤</h2>
+        <div class="status-row"><button class="filter-btn active" data-risk-filter="all">全部</button><button class="filter-btn" data-risk-filter="high">高风险</button><button class="filter-btn" data-risk-filter="mid">中风险</button><button class="filter-btn" data-risk-filter="low">低风险</button></div>
+        <p class="notice" role="status" data-action-status>还没有审核命令。</p>
+      </aside>
+    </section>
+    <section class="console" aria-label="任务运行详情">
+      <aside class="steps" aria-label="任务步骤">
+        <div class="step">已完成：读取仓库</div>
+        <div class="step">已完成：生成计划</div>
+        <div class="step" aria-current="step">进行中：审核命令</div>
+        <div class="step">失败：一次测试超时</div>
+      </aside>
+      <div class="command-list" aria-label="命令审核队列">
+        <details class="command" data-risk="low" open><summary>npm run lint</summary><p>中文解释：运行 lint 检查，不会修改文件。</p><p><span class="risk-low">低风险：</span>只读检查，可能耗时较长。</p><button class="btn" data-decision="allow" aria-label="允许运行 npm run lint">允许</button> <button class="btn secondary" data-decision="deny" aria-label="拒绝运行 npm run lint">拒绝</button></details>
+        <details class="command" data-risk="mid"><summary>npm install lucide-react</summary><p>中文解释：安装图标依赖，会修改 package-lock 和 node_modules。</p><p><span class="risk-mid">中风险：</span>需要确认依赖来源。</p><button class="btn" data-decision="allow" aria-label="允许安装 lucide-react">允许</button> <button class="btn secondary" data-decision="deny" aria-label="拒绝安装 lucide-react">拒绝</button></details>
+        <details class="command" data-risk="high"><summary>git reset --hard</summary><p>中文解释：丢弃当前工作区改动。</p><p><span class="risk-high">高风险：</span>可能删除用户未保存的工作。</p><button class="btn" data-decision="allow" aria-label="允许执行 git reset hard">允许</button> <button class="btn secondary" data-decision="deny" aria-label="拒绝执行 git reset hard">拒绝</button></details>
+      </div>
+      <aside class="files" aria-label="文件改动">
+        <div class="file">新增：src/components/AgentTaskConsole.tsx</div>
+        <div class="file">新增：src/components/CommandReviewQueue.tsx</div>
+        <div class="file">修改：src/App.tsx</div>
+        <div class="event">20:42 读取任务<br>20:43 标记高风险命令<br>20:44 等待用户审核</div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>

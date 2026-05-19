@@ -11,7 +11,7 @@
 - [写作与办公](writing-and-office/README.md)
 - 学习与研究：待有条目后创建。
 - 内容创作：待有条目后创建。
-- 开发与调试：待有条目后创建。
+- [开发与调试](coding-and-devtools/README.md)
 - 自动化流程：待有条目后创建。
 
 每个卡片都应该说明：

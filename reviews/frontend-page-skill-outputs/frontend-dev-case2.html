@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>frontend-dev / Case 2</title>
+  <link rel="stylesheet" href="shared.css" />
+  <script defer src="shared.js"></script>
+</head>
+<body class="page dev" data-hub-page>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">Skill Discovery Studio</div>
+      <nav class="nav"><a href="#">教程</a><a href="#">Skill 库</a><a href="#">Starter</a><a href="#">贡献</a></nav>
+    </header>
+    <section class="hero">
+      <div>
+        <span class="eyebrow">frontend-dev output · Case 2</span>
+        <h1>找到能跑起来的 Skill，而不是收藏更多链接</h1>
+        <p class="lead">用更强的视觉叙事把 Skill Hub 做成一个入口：先识别读者，再给出路线，再把候选卡片推到眼前。</p>
+        <div class="actions"><button class="btn">新手路线</button><button class="btn secondary">Agent 熟手路线</button><button class="btn secondary">贡献路线</button></div>
+      </div>
+      <aside class="panel"><h2>当前焦点</h2><p>前端页面 / 小应用生成正在评测中。你可以搜索 frontend、页面、设计感。</p></aside>
+    </section>
+    <section class="hub-layout">
+      <aside class="filters">
+        <button class="filter-btn active" data-category-filter="all">全部场景</button>
+        <button class="filter-btn" data-category-filter="office">写作办公</button>
+        <button class="filter-btn" data-category-filter="research">学习研究</button>
+        <button class="filter-btn" data-category-filter="content">内容创作</button>
+        <button class="filter-btn" data-category-filter="dev">开发调试</button>
+        <button class="filter-btn" data-category-filter="automation">自动化流程</button>
+      </aside>
+      <div>
+        <div class="search-row"><input data-search aria-label="搜索 Skill" placeholder="搜索 Skill、任务或推荐位" /></div>
+        <div class="cards">
+          <article class="skill-card" data-card data-category="office"><strong>PPT Master</strong><p>从材料到可编辑 PPT。</p><span class="pill">最省心</span></article>
+          <article class="skill-card" data-card data-category="office"><strong>Weekly Status</strong><p>把零散记录变成领导周报。</p><span class="pill">starter</span></article>
+          <article class="skill-card" data-card data-category="dev"><strong>frontend-dev</strong><p>高视觉、动效、文案和本地资产工作流。</p><span class="pill">高级候选</span></article>
+          <article class="skill-card" data-card data-category="dev"><strong>frontend-ui-engineering</strong><p>真实项目的前端工程质量。</p><span class="pill">进阶</span></article>
+          <article class="skill-card" data-card data-category="content"><strong>内容创作 Skill</strong><p>选题、大纲、脚本。</p><span class="pill">待补</span></article>
+          <article class="skill-card" data-card data-category="automation"><strong>自动化流程 Skill</strong><p>批量处理与同步。</p><span class="pill">待补</span></article>
+        </div>
+        <div class="empty-state" data-empty>这里暂时没有匹配项。你可以提交一个新的 Skill 候选。</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

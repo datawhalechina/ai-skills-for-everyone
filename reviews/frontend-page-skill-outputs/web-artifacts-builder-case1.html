@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>web-artifacts-builder / Case 1</title>
+  <link rel="stylesheet" href="shared.css" />
+</head>
+<body class="page wab">
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">Weekly Report Artifact</div>
+      <nav class="nav"><a href="#">功能</a><a href="#">示例</a><a href="#">开始使用</a></nav>
+    </header>
+    <section class="hero">
+      <div class="panel">
+        <span class="eyebrow">web-artifacts-builder output · Case 1</span>
+        <h1>个人周报生成器</h1>
+        <p class="lead">一个可嵌入 artifact 的单页工具原型：输入材料、查看整理逻辑、复制领导可读的周报。</p>
+        <div class="actions">
+          <button class="btn">创建周报</button>
+          <button class="btn secondary">导入示例</button>
+        </div>
+      </div>
+      <aside class="panel">
+        <h2>本地处理</h2>
+        <p>当前页面不依赖后端。真实接入时可以把输入、输出和复制操作封装为 React 组件。</p>
+        <span class="pill">React artifact ready</span>
+      </aside>
+    </section>
+    <section class="grid-3">
+      <div class="panel"><h3>1. 粘贴记录</h3><p>支持零散文本，不强制格式。</p></div>
+      <div class="panel"><h3>2. 结构化整理</h3><p>按完成、进行中、风险、下周计划输出。</p></div>
+      <div class="panel"><h3>3. 复制周报</h3><p>保留事实，不编造进展。</p></div>
+    </section>
+    <section class="grid-2" style="margin-top:14px">
+      <div class="input-card"><strong>输入片段</strong><p>完成客服标签初稿；接口联调 70%；字段定义还要产品确认。</p></div>
+      <div class="output-card"><strong>输出片段</strong><p>本周已完成客服标签规则初稿，并推进接口联调。当前主要阻塞是字段定义尚未确认，下周将推动产品、数据共同评审。</p></div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>web-artifacts-builder / Case 2</title>
+  <link rel="stylesheet" href="shared.css" />
+  <script defer src="shared.js"></script>
+</head>
+<body class="page wab" data-hub-page>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">Skill Hub Artifact</div>
+      <nav class="nav"><a href="#">教程</a><a href="#">Skill 库</a><a href="#">Starter</a><a href="#">贡献</a></nav>
+    </header>
+    <section class="hero">
+      <div class="panel">
+        <span class="eyebrow">web-artifacts-builder output · Case 2</span>
+        <h1>AI Skill Hub 首页</h1>
+        <p class="lead">一个可以打包成单文件 artifact 的 Skill 发现页，包含分类、搜索、空状态和推荐卡片。</p>
+      </div>
+      <aside class="panel">
+        <h2>三条入口</h2>
+        <div class="actions"><button class="btn">新手从这里开始</button><button class="btn secondary">我会用 Agent</button><button class="btn secondary">贡献 Skill</button></div>
+      </aside>
+    </section>
+    <section class="hub-layout">
+      <aside class="filters">
+        <button class="filter-btn active" data-category-filter="all">全部</button>
+        <button class="filter-btn" data-category-filter="office">写作办公</button>
+        <button class="filter-btn" data-category-filter="research">学习研究</button>
+        <button class="filter-btn" data-category-filter="content">内容创作</button>
+        <button class="filter-btn" data-category-filter="dev">开发调试</button>
+        <button class="filter-btn" data-category-filter="automation">自动化流程</button>
+      </aside>
+      <div>
+        <div class="search-row"><input data-search aria-label="搜索 Skill" placeholder="搜索 Skill 名称、场景或难度" /><button class="btn">搜索</button></div>
+        <div class="cards">
+          <article class="skill-card" data-card data-category="office"><strong>PPT Master</strong><p>可编辑 PPT 生成。</p><span class="pill">进阶 · 有 starter</span></article>
+          <article class="skill-card" data-card data-category="office"><strong>Weekly Status</strong><p>周报和状态更新。</p><span class="pill">最省心 · 有 starter</span></article>
+          <article class="skill-card" data-card data-category="dev"><strong>web-artifacts-builder</strong><p>复杂 React artifact 脚手架。</p><span class="pill">进阶 · 可打包</span></article>
+          <article class="skill-card" data-card data-category="dev"><strong>frontend-design</strong><p>设计感增强。</p><span class="pill">最省心候选</span></article>
+          <article class="skill-card" data-card data-category="research"><strong>论文阅读</strong><p>待搜罗高质量候选。</p><span class="pill">待补</span></article>
+          <article class="skill-card" data-card data-category="automation"><strong>自动化流程</strong><p>文件处理和数据同步。</p><span class="pill">待补</span></article>
+        </div>
+        <div class="empty-state" data-empty>没有结果。可以清空搜索，或到贡献入口提交候选。</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

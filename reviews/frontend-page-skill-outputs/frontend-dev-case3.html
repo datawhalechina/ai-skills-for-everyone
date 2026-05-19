@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>frontend-dev / Case 3</title>
+  <link rel="stylesheet" href="shared.css" />
+  <script defer src="shared.js"></script>
+</head>
+<body class="page dev" data-console-page>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">Agent Control Room</div>
+      <nav class="nav"><span>状态：等待确认</span><span>耗时：08:12</span><span>风险：中</span></nav>
+    </header>
+    <section class="hero">
+      <div>
+        <span class="eyebrow">frontend-dev output · Case 3</span>
+        <h1>把自动执行的速度，装进可控的驾驶舱</h1>
+        <p class="lead">这个版本强调强视觉和动效潜力，但仍然把命令解释、风险提示和文件改动放在主要工作流中。</p>
+        <div class="status-row"><button class="filter-btn active" data-risk-filter="all">全部</button><button class="filter-btn" data-risk-filter="high">高风险</button><button class="filter-btn" data-risk-filter="mid">中风险</button><button class="filter-btn" data-risk-filter="low">低风险</button></div>
+      </div>
+      <aside class="panel"><h2>审核状态</h2><p data-action-status>正在等待你审核第一条命令。</p></aside>
+    </section>
+    <section class="console">
+      <aside class="steps">
+        <div class="step">完成：扫描仓库</div>
+        <div class="step">完成：生成改动计划</div>
+        <div class="step" aria-current="step">当前：命令确认</div>
+        <div class="step">待执行：输出 diff</div>
+      </aside>
+      <div class="command-list">
+        <details class="command" data-risk="low" open><summary>npm run typecheck</summary><p>中文解释：运行类型检查，不会修改文件。</p><p class="risk-low">低风险：只读。</p><button class="btn" data-decision="allow">允许</button> <button class="btn secondary" data-decision="deny">拒绝</button></details>
+        <details class="command" data-risk="mid"><summary>npm install framer-motion</summary><p>中文解释：安装动效依赖，会修改依赖文件。</p><p class="risk-mid">中风险：确认项目确实需要动效库。</p><button class="btn" data-decision="allow">允许</button> <button class="btn secondary" data-decision="deny">拒绝</button></details>
+        <details class="command" data-risk="high"><summary>Remove-Item -Recurse .next</summary><p>中文解释：删除构建缓存目录。</p><p class="risk-high">高风险：只在确认目录无用户文件时执行。</p><button class="btn" data-decision="allow">允许</button> <button class="btn secondary" data-decision="deny">拒绝</button></details>
+      </div>
+      <aside class="files">
+        <div class="file">新增：src/components/ControlRoom.tsx</div>
+        <div class="file">新增：src/components/MotionStatusRail.tsx</div>
+        <div class="file">修改：src/styles.css</div>
+        <div class="event">20:56 标记命令风险<br>20:57 等待审核<br>20:58 准备生成摘要</div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>

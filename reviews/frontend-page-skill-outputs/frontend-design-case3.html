@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>frontend-design / Case 3</title>
+  <link rel="stylesheet" href="shared.css" />
+  <script defer src="shared.js"></script>
+</head>
+<body class="page fd" data-console-page>
+  <main class="shell">
+    <header class="topbar">
+      <div class="brand">Agent 任务运行台</div>
+      <nav class="nav"><span>状态：等待确认</span><span>耗时：08:12</span><span>风险：中</span></nav>
+    </header>
+    <section class="hero">
+      <div>
+        <span class="eyebrow">frontend-design output · Case 3</span>
+        <h1>让每条命令都先讲人话</h1>
+        <p class="lead">这个运行台把 Agent 的行动拆成步骤、命令、风险和文件变化。页面的重点不是“自动”，而是“人在关键节点能判断”。</p>
+        <div class="status-row">
+          <button class="filter-btn active" data-risk-filter="all">全部命令</button>
+          <button class="filter-btn" data-risk-filter="high">高风险</button>
+          <button class="filter-btn" data-risk-filter="mid">中风险</button>
+          <button class="filter-btn" data-risk-filter="low">低风险</button>
+        </div>
+      </div>
+      <aside class="panel"><h2>审核结果</h2><p data-action-status>尚未选择任何命令。</p></aside>
+    </section>
+    <section class="console">
+      <aside class="steps">
+        <div class="step">已完成：读取项目结构</div>
+        <div class="step">已完成：定位配置文件</div>
+        <div class="step" aria-current="step">进行中：等待命令审核</div>
+        <div class="step">待执行：生成修改摘要</div>
+      </aside>
+      <div class="command-list">
+        <details class="command" data-risk="low" open><summary>powershell -File scripts/check-env.ps1</summary><p>中文解释：检查 Python、Node 和 npx 是否可用，不修改项目文件。</p><p class="risk-low">低风险：只读检查。</p><button class="btn" data-decision="allow">允许</button> <button class="btn secondary" data-decision="deny">拒绝</button></details>
+        <details class="command" data-risk="mid"><summary>npm install</summary><p>中文解释：安装前端依赖，会写入 node_modules 并访问网络。</p><p class="risk-mid">中风险：确认当前目录和 package 来源后再执行。</p><button class="btn" data-decision="allow">允许</button> <button class="btn secondary" data-decision="deny">拒绝</button></details>
+        <details class="command" data-risk="high"><summary>Remove-Item -Recurse outputs</summary><p>中文解释：删除输出目录。除非你确认这些都是测试产物，否则不要执行。</p><p class="risk-high">高风险：会删除文件。</p><button class="btn" data-decision="allow">允许</button> <button class="btn secondary" data-decision="deny">拒绝</button></details>
+      </div>
+      <aside class="files">
+        <div class="file">新增：src/components/CommandQueue.tsx</div>
+        <div class="file">修改：src/App.tsx</div>
+        <div class="file">修改：src/styles.css</div>
+        <div class="event">20:12 进入命令审核<br>20:13 检测到高风险删除命令</div>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>
