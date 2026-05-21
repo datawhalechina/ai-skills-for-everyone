@@ -1,0 +1,610 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agent Baseline Case 3 - Agent 任务运行台</title>
+  <style>
+    :root {
+      --bg: #f4f2ec;
+      --panel: #ffffff;
+      --ink: #1f221f;
+      --muted: #667069;
+      --line: #dcd7cd;
+      --green: #276749;
+      --blue: #315c81;
+      --amber: #ad6518;
+      --red: #9b2c2c;
+      --green-soft: #e5f0e9;
+      --blue-soft: #e6eef5;
+      --amber-soft: #fff1d8;
+      --red-soft: #f8e4df;
+      --shadow: 0 16px 42px rgba(38, 43, 35, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      letter-spacing: 0;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .shell {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+    }
+
+    aside {
+      background: #fffdf8;
+      border-right: 1px solid var(--line);
+      padding: 18px;
+      overflow: auto;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: var(--blue);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 2px;
+      font-size: 18px;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    .task {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .task.active {
+      border-color: rgba(49, 92, 129, 0.42);
+      background: var(--blue-soft);
+    }
+
+    .task strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 14px;
+    }
+
+    .main {
+      padding: 18px;
+      min-width: 0;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 14px;
+    }
+
+    .topbar {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .title h2 {
+      margin-bottom: 6px;
+      font-size: 24px;
+    }
+
+    .status-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: flex-end;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      border-radius: 999px;
+      padding: 0 10px;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .running {
+      background: var(--green-soft);
+      color: var(--green);
+    }
+
+    .waiting {
+      background: var(--amber-soft);
+      color: var(--amber);
+    }
+
+    .risk {
+      background: var(--red-soft);
+      color: var(--red);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(360px, 1.1fr) minmax(340px, 0.9fr);
+      gap: 14px;
+      min-height: 0;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      min-width: 0;
+    }
+
+    .panel-head {
+      min-height: 52px;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .panel h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .panel-body {
+      padding: 16px;
+    }
+
+    .stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: start;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .step:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 900;
+      background: var(--green-soft);
+      color: var(--green);
+    }
+
+    .dot.pending {
+      background: var(--amber-soft);
+      color: var(--amber);
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .command {
+      background: #1f221f;
+      color: #f8f4e9;
+      border-radius: 8px;
+      padding: 14px;
+      font-family: Consolas, "SFMono-Regular", monospace;
+      line-height: 1.55;
+      overflow-x: auto;
+    }
+
+    .approval {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .approve,
+    .deny,
+    .ghost {
+      min-height: 40px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .approve {
+      background: var(--green);
+      color: white;
+      border-color: var(--green);
+    }
+
+    .deny {
+      background: #fffdf8;
+      color: var(--red);
+      border-color: rgba(155, 44, 44, 0.35);
+    }
+
+    .ghost {
+      background: #fffdf8;
+      color: var(--ink);
+      padding: 0 10px;
+    }
+
+    .risk-box {
+      background: var(--red-soft);
+      border: 1px solid rgba(155, 44, 44, 0.2);
+      border-radius: 8px;
+      padding: 12px;
+      color: #6e2525;
+      line-height: 1.6;
+      margin-top: 12px;
+    }
+
+    .files {
+      display: grid;
+      gap: 10px;
+    }
+
+    .file {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: center;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 10px;
+      background: #fffdf8;
+    }
+
+    .kind {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      border-radius: 6px;
+      color: white;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .add {
+      background: var(--green);
+    }
+
+    .edit {
+      background: var(--blue);
+    }
+
+    .warn {
+      background: var(--amber);
+    }
+
+    .file code {
+      color: var(--muted);
+      font-size: 12px;
+      word-break: break-all;
+    }
+
+    .log {
+      background: #fffdf8;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      max-height: 248px;
+      overflow: auto;
+      line-height: 1.65;
+      font-family: Consolas, "SFMono-Regular", monospace;
+      font-size: 12px;
+    }
+
+    .log div {
+      margin: 0 0 6px;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1120px) {
+      .shell {
+        grid-template-columns: 1fr;
+      }
+
+      aside {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .task-list {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+    }
+
+    @media (max-width: 880px) {
+      .grid,
+      .topbar {
+        grid-template-columns: 1fr;
+      }
+
+      .status-strip {
+        justify-content: flex-start;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .main {
+        padding: 12px;
+      }
+
+      .task-list,
+      .approval {
+        grid-template-columns: 1fr;
+      }
+
+      .step {
+        grid-template-columns: 30px minmax(0, 1fr);
+      }
+
+      .step .pill {
+        grid-column: 2;
+        justify-self: start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside>
+      <div class="brand">
+        <div class="mark">A</div>
+        <div>
+          <h1>Agent 运行台</h1>
+          <p class="muted">任务、命令、风险和文件变更集中查看</p>
+        </div>
+      </div>
+
+      <div class="task-list">
+        <div class="task active">
+          <strong>生成论文阅读 starter</strong>
+          <p class="muted">等待命令确认</p>
+        </div>
+        <div class="task">
+          <strong>复核前端 Skill 卡片</strong>
+          <p class="muted">运行中</p>
+        </div>
+        <div class="task">
+          <strong>整理会议纪要候选</strong>
+          <p class="muted">排队中</p>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div class="title">
+          <h2>生成论文阅读 starter</h2>
+          <p class="muted">目标：创建一个普通人可用的论文阅读测试工作区，包含输入模板、提示词、样例和评测记录。</p>
+        </div>
+        <div class="status-strip">
+          <span class="pill running">执行中</span>
+          <span class="pill waiting">等待确认</span>
+          <span class="pill risk">1 个风险</span>
+        </div>
+      </div>
+
+      <div class="grid">
+        <div class="stack">
+          <section class="panel">
+            <div class="panel-head">
+              <h3>任务步骤</h3>
+              <span class="pill running">4 / 6</span>
+            </div>
+            <div class="panel-body stack">
+              <div class="step">
+                <div class="dot">1</div>
+                <div>
+                  <strong>读取现有目录结构</strong>
+                  <p class="muted">已确认 reviews、kits、catalog、collections 的放置规则。</p>
+                </div>
+                <span class="pill running">完成</span>
+              </div>
+              <div class="step">
+                <div class="dot">2</div>
+                <div>
+                  <strong>写入测试用例</strong>
+                  <p class="muted">已准备 3 个论文阅读 case：单篇经典、方法论文、多篇对比。</p>
+                </div>
+                <span class="pill running">完成</span>
+              </div>
+              <div class="step">
+                <div class="dot">3</div>
+                <div>
+                  <strong>创建 starter 草稿</strong>
+                  <p class="muted">将生成输入模板、normal-use 提示词和输出目录。</p>
+                </div>
+                <span class="pill waiting">待确认</span>
+              </div>
+              <div class="step">
+                <div class="dot pending">4</div>
+                <div>
+                  <strong>更新合集推荐位</strong>
+                  <p class="muted">需要等真实试跑结果出来后再决定推荐，不提前写死。</p>
+                </div>
+                <span class="pill waiting">等待</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <h3>命令审核</h3>
+              <span class="pill waiting" id="approvalState">需要你确认</span>
+            </div>
+            <div class="panel-body">
+              <p class="muted">Agent 想执行下面的命令，用来创建论文阅读 starter 的空目录和占位文件。</p>
+              <pre class="command">New-Item -ItemType Directory -Path kits\paper-reading-starter
+New-Item -ItemType Directory -Path kits\paper-reading-starter\inputs
+New-Item -ItemType Directory -Path kits\paper-reading-starter\prompts</pre>
+              <div class="risk-box">
+                风险提示：这是新增目录，不会删除已有文件。执行前仍建议确认路径在当前项目内。
+              </div>
+              <div class="approval">
+                <button class="approve" id="approveBtn">允许执行</button>
+                <button class="deny" id="denyBtn">拒绝</button>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="stack">
+          <section class="panel">
+            <div class="panel-head">
+              <h3>文件变更</h3>
+              <div class="toolbar">
+                <button class="ghost">查看 diff</button>
+                <button class="ghost">折叠</button>
+              </div>
+            </div>
+            <div class="panel-body files">
+              <div class="file">
+                <span class="kind add">A</span>
+                <div>
+                  <strong>paper-reading-skill-test-cases.md</strong>
+                  <br><code>reviews/paper-reading-skill-test-cases.md</code>
+                </div>
+                <span class="pill running">新增</span>
+              </div>
+              <div class="file">
+                <span class="kind edit">M</span>
+                <div>
+                  <strong>learning-and-research.md</strong>
+                  <br><code>collections/learning-and-research.md</code>
+                </div>
+                <span class="pill waiting">待定</span>
+              </div>
+              <div class="file">
+                <span class="kind warn">!</span>
+                <div>
+                  <strong>第三方项目许可证</strong>
+                  <br><code>需要记录来源、许可证和核查日期</code>
+                </div>
+                <span class="pill risk">注意</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <h3>事件日志</h3>
+              <span class="pill running">实时</span>
+            </div>
+            <div class="panel-body">
+              <div class="log" id="log">
+                <div>[10:18:03] read README.md</div>
+                <div>[10:18:07] read TODO.md</div>
+                <div>[10:18:12] create review test cases</div>
+                <div>[10:18:30] wait for command approval</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <h3>下一步建议</h3>
+            </div>
+            <div class="panel-body">
+              <p class="muted">先不要把论文阅读 Skill 写进正式推荐位。等三组 case 都跑完，再看谁最适合小白，谁适合进阶，谁只是相关工具。</p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const log = document.getElementById("log");
+    const approvalState = document.getElementById("approvalState");
+
+    function addLog(text) {
+      const row = document.createElement("div");
+      const now = new Date().toLocaleTimeString("zh-CN", { hour12: false });
+      row.textContent = `[${now}] ${text}`;
+      log.appendChild(row);
+      log.scrollTop = log.scrollHeight;
+    }
+
+    document.getElementById("approveBtn").addEventListener("click", () => {
+      approvalState.textContent = "已允许";
+      approvalState.className = "pill running";
+      addLog("user approved command");
+      addLog("creating starter directories...");
+    });
+
+    document.getElementById("denyBtn").addEventListener("click", () => {
+      approvalState.textContent = "已拒绝";
+      approvalState.className = "pill risk";
+      addLog("user denied command");
+      addLog("task paused before file changes");
+    });
+  </script>
+</body>
+</html>
+

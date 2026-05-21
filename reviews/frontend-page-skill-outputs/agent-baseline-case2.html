@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agent Baseline Case 2 - AI Skill Hub</title>
+  <style>
+    :root {
+      --bg: #f6f4ee;
+      --panel: #ffffff;
+      --ink: #20221f;
+      --muted: #68706a;
+      --line: #ddd8ce;
+      --green: #26634a;
+      --blue: #315c81;
+      --orange: #ba5f1d;
+      --red: #9b2c2c;
+      --soft-green: #e5f0e9;
+      --soft-blue: #e6eef5;
+      --soft-orange: #fff0df;
+      --soft-red: #f6e4e0;
+      --shadow: 0 16px 42px rgba(38, 43, 35, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      letter-spacing: 0;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .layout {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+    }
+
+    aside {
+      border-right: 1px solid var(--line);
+      background: #fffdf8;
+      padding: 22px 18px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: auto;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: var(--green);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      margin-bottom: 2px;
+      font-size: 18px;
+      line-height: 1.25;
+    }
+
+    .tiny {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .nav-title {
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      margin: 22px 0 8px;
+    }
+
+    .nav-button {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--ink);
+      border-radius: 8px;
+      min-height: 40px;
+      padding: 0 10px;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .nav-button span:last-child {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .nav-button.active {
+      background: var(--soft-green);
+      border-color: rgba(38, 99, 74, 0.25);
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    .main {
+      min-width: 0;
+      padding: 22px;
+    }
+
+    .top {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: end;
+      margin-bottom: 18px;
+    }
+
+    .top h2 {
+      margin-bottom: 6px;
+      font-size: 26px;
+      line-height: 1.25;
+    }
+
+    .start {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: 14px;
+      width: 300px;
+    }
+
+    .start strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .filters {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: 14px;
+      margin-bottom: 18px;
+      display: grid;
+      grid-template-columns: minmax(260px, 1fr) auto;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .search {
+      width: 100%;
+      min-height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0 12px;
+      outline: none;
+      background: #fffdf8;
+    }
+
+    .search:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(38, 99, 74, 0.14);
+    }
+
+    .toggle {
+      border: 1px solid var(--line);
+      background: #fffdf8;
+      min-height: 44px;
+      border-radius: 8px;
+      padding: 0 12px;
+      cursor: pointer;
+      color: var(--muted);
+    }
+
+    .toggle.active {
+      color: var(--green);
+      border-color: rgba(38, 99, 74, 0.35);
+      background: var(--soft-green);
+      font-weight: 800;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .stat {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--green);
+      font-size: 24px;
+      line-height: 1.1;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+      min-height: 228px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .card-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .card h3 {
+      font-size: 17px;
+      margin-bottom: 4px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 0 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .easy {
+      background: var(--soft-green);
+      color: var(--green);
+    }
+
+    .advanced {
+      background: var(--soft-blue);
+      color: var(--blue);
+    }
+
+    .remix {
+      background: var(--soft-orange);
+      color: var(--orange);
+    }
+
+    .watch {
+      background: var(--soft-red);
+      color: var(--red);
+    }
+
+    .desc {
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: 13px;
+      margin-bottom: auto;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .meta span {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 8px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .card button {
+      border: 1px solid var(--line);
+      background: #fffdf8;
+      border-radius: 8px;
+      min-height: 38px;
+      cursor: pointer;
+      color: var(--ink);
+    }
+
+    .empty {
+      grid-column: 1 / -1;
+      border: 1px dashed #b8b1a3;
+      border-radius: 8px;
+      padding: 28px;
+      text-align: center;
+      color: var(--muted);
+      background: #fffdf8;
+    }
+
+    @media (max-width: 1120px) {
+      .grid,
+      .stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 820px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      aside {
+        position: static;
+        height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .top,
+      .filters {
+        grid-template-columns: 1fr;
+      }
+
+      .start {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .main {
+        padding: 14px;
+      }
+
+      .grid,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <aside>
+      <div class="brand">
+        <div class="brand-mark">S</div>
+        <div>
+          <h1>AI Skill Hub</h1>
+          <p class="tiny">按场景找可用 Skill</p>
+        </div>
+      </div>
+
+      <div class="nav-title">分类</div>
+      <button class="nav-button active" data-category="all"><span>全部</span><span>8</span></button>
+      <button class="nav-button" data-category="office"><span>写作与办公</span><span>3</span></button>
+      <button class="nav-button" data-category="dev"><span>开发与调试</span><span>3</span></button>
+      <button class="nav-button" data-category="research"><span>学习与研究</span><span>2</span></button>
+
+      <div class="nav-title">当前规则</div>
+      <p class="tiny">每个小类只保留少量推荐位，优先关注能不能跑通、适不适合普通人、有没有清楚的使用边界。</p>
+    </aside>
+
+    <main class="main">
+      <div class="top">
+        <div>
+          <h2>从任务出发，而不是从工具名出发</h2>
+          <p class="tiny">先选场景，再看最省心、进阶、可改造路线。每张卡片都应该告诉你：适合谁、怎么开始、有什么坑。</p>
+        </div>
+        <div class="start">
+          <strong>第一次来？</strong>
+          <p class="tiny">建议先跑 PPT 生成 starter，再回来看其他 Skill。跑通过一次，后面会顺很多。</p>
+        </div>
+      </div>
+
+      <div class="filters">
+        <input id="search" class="search" placeholder="搜索：PPT、周报、前端、论文..." />
+        <button id="starterOnly" class="toggle">只看有 starter</button>
+      </div>
+
+      <div class="stats">
+        <div class="stat"><strong id="totalCount">8</strong><span class="tiny">当前显示</span></div>
+        <div class="stat"><strong>4</strong><span class="tiny">已有评测</span></div>
+        <div class="stat"><strong>3</strong><span class="tiny">已有 starter</span></div>
+        <div class="stat"><strong>2</strong><span class="tiny">待补教程</span></div>
+      </div>
+
+      <div id="grid" class="grid"></div>
+    </main>
+  </div>
+
+  <script>
+    const skills = [
+      {
+        name: "PPT Master",
+        category: "office",
+        level: "easy",
+        label: "最省心",
+        desc: "把材料生成可编辑 PPT，已经有普通人 starter 和中文上手路线。",
+        tags: ["PPT", "starter", "已跑通"],
+        starter: true
+      },
+      {
+        name: "Weekly Status",
+        category: "office",
+        level: "easy",
+        label: "最省心",
+        desc: "把零散工作记录整理成面向领导的周报或项目状态更新。",
+        tags: ["周报", "自研轻 Skill", "starter"],
+        starter: true
+      },
+      {
+        name: "GPT Image2 PPT Skills",
+        category: "office",
+        level: "advanced",
+        label: "进阶",
+        desc: "适合视觉要求更高的 PPT，需要额外接入图像生成 API。",
+        tags: ["PPT", "视觉", "API"],
+        starter: false
+      },
+      {
+        name: "frontend-design",
+        category: "dev",
+        level: "easy",
+        label: "最省心",
+        desc: "适合把页面先做得不丑，尤其是首页、展示页、简单工具介绍页。",
+        tags: ["前端", "视觉", "已评测"],
+        starter: false
+      },
+      {
+        name: "frontend-ui-engineering",
+        category: "dev",
+        level: "advanced",
+        label: "进阶",
+        desc: "更关注组件、状态、响应式和可访问性，适合真实前端项目。",
+        tags: ["前端", "工程", "已评测"],
+        starter: false
+      },
+      {
+        name: "web-artifacts-builder",
+        category: "dev",
+        level: "remix",
+        label: "可改造",
+        desc: "适合内部工具台、控制台、复杂交互页面和单文件 artifact。",
+        tags: ["前端", "工具台", "已评测"],
+        starter: false
+      },
+      {
+        name: "huggingface-papers",
+        category: "research",
+        level: "easy",
+        label: "待测",
+        desc: "给论文链接让 Agent 总结，适合做论文阅读类 Skill 的最省心候选。",
+        tags: ["论文", "待评测", "链接"],
+        starter: false
+      },
+      {
+        name: "paper-qa",
+        category: "research",
+        level: "advanced",
+        label: "待测",
+        desc: "适合多篇论文问答和引用式回答，配置更重但上限更高。",
+        tags: ["论文", "RAG", "引用"],
+        starter: false
+      }
+    ];
+
+    const grid = document.getElementById("grid");
+    const search = document.getElementById("search");
+    const starterOnly = document.getElementById("starterOnly");
+    let activeCategory = "all";
+    let onlyStarter = false;
+
+    function badgeClass(level) {
+      return level === "easy" ? "easy" : level === "advanced" ? "advanced" : level === "remix" ? "remix" : "watch";
+    }
+
+    function render() {
+      const keyword = search.value.trim().toLowerCase();
+      const filtered = skills.filter((skill) => {
+        const inCategory = activeCategory === "all" || skill.category === activeCategory;
+        const inStarter = !onlyStarter || skill.starter;
+        const inKeyword = !keyword || [skill.name, skill.desc, ...skill.tags].join(" ").toLowerCase().includes(keyword);
+        return inCategory && inStarter && inKeyword;
+      });
+
+      document.getElementById("totalCount").textContent = filtered.length;
+      grid.innerHTML = "";
+
+      if (!filtered.length) {
+        grid.innerHTML = `<div class="empty"><strong>没有找到匹配的 Skill</strong><br>换个关键词，或者关闭“只看有 starter”。</div>`;
+        return;
+      }
+
+      filtered.forEach((skill) => {
+        const card = document.createElement("article");
+        card.className = "card";
+        card.innerHTML = `
+          <div class="card-head">
+            <div>
+              <h3>${skill.name}</h3>
+              <p class="tiny">${skill.category === "office" ? "写作与办公" : skill.category === "dev" ? "开发与调试" : "学习与研究"}</p>
+            </div>
+            <span class="badge ${badgeClass(skill.level)}">${skill.label}</span>
+          </div>
+          <p class="desc">${skill.desc}</p>
+          <div class="meta">${skill.tags.map((tag) => `<span>${tag}</span>`).join("")}</div>
+          <button>${skill.starter ? "打开 starter" : "查看卡片"}</button>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    document.querySelectorAll(".nav-button").forEach((button) => {
+      button.addEventListener("click", () => {
+        activeCategory = button.dataset.category;
+        document.querySelectorAll(".nav-button").forEach((item) => item.classList.toggle("active", item === button));
+        render();
+      });
+    });
+
+    search.addEventListener("input", render);
+    starterOnly.addEventListener("click", () => {
+      onlyStarter = !onlyStarter;
+      starterOnly.classList.toggle("active", onlyStarter);
+      render();
+    });
+
+    render();
+  </script>
+</body>
+</html>
+

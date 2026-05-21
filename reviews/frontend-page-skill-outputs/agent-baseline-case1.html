@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agent Baseline Case 1 - 个人周报生成器</title>
+  <style>
+    :root {
+      --bg: #f7f5ef;
+      --panel: #ffffff;
+      --ink: #20221f;
+      --muted: #68706a;
+      --line: #dedbd2;
+      --green: #276749;
+      --green-soft: #e5f0e9;
+      --blue: #315c81;
+      --blue-soft: #e7eef5;
+      --amber: #b7791f;
+      --amber-soft: #fff3d6;
+      --rose-soft: #f7e7e3;
+      --shadow: 0 18px 46px rgba(35, 38, 32, 0.11);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Microsoft YaHei", "PingFang SC", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      letter-spacing: 0;
+    }
+
+    button,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    .app {
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: rgba(247, 245, 239, 0.94);
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      backdrop-filter: blur(14px);
+    }
+
+    .topbar {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 16px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 240px;
+    }
+
+    .mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      color: #ffffff;
+      background: var(--green);
+      font-weight: 800;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 20px;
+      line-height: 1.25;
+    }
+
+    .subtitle {
+      margin: 3px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .chip {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 13px;
+    }
+
+    main {
+      max-width: 1440px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 22px;
+      display: grid;
+      grid-template-columns: 360px minmax(380px, 1fr) 420px;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      min-height: 0;
+      overflow: hidden;
+    }
+
+    .section-head {
+      padding: 16px 16px 12px;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .hint {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .panel-body {
+      padding: 16px;
+    }
+
+    .notes {
+      width: 100%;
+      min-height: 540px;
+      resize: vertical;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      color: var(--ink);
+      background: #fffdf8;
+      line-height: 1.7;
+      outline: none;
+    }
+
+    .notes:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px rgba(39, 103, 73, 0.14);
+    }
+
+    .control-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    label {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    select {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fffdf8;
+      color: var(--ink);
+      padding: 10px 12px;
+      outline: none;
+    }
+
+    .segmented {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    .segmented button,
+    .primary,
+    .secondary {
+      min-height: 40px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      cursor: pointer;
+      transition: 0.18s ease;
+    }
+
+    .segmented button {
+      background: #fffdf8;
+      color: var(--muted);
+    }
+
+    .segmented button.active {
+      background: var(--green-soft);
+      color: var(--green);
+      border-color: rgba(39, 103, 73, 0.45);
+      font-weight: 700;
+    }
+
+    .primary {
+      width: 100%;
+      background: var(--green);
+      color: #ffffff;
+      border-color: var(--green);
+      font-weight: 800;
+    }
+
+    .secondary {
+      background: #fffdf8;
+      color: var(--ink);
+      padding: 0 12px;
+    }
+
+    .primary:hover,
+    .secondary:hover,
+    .segmented button:hover {
+      transform: translateY(-1px);
+    }
+
+    .summary-strip {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      background: #fffdf8;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 22px;
+      color: var(--green);
+      line-height: 1.1;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .advice {
+      background: var(--amber-soft);
+      border: 1px solid #ecd19b;
+      border-radius: 8px;
+      padding: 12px;
+      color: #674a12;
+      line-height: 1.6;
+      font-size: 13px;
+    }
+
+    .preview {
+      background: #fffdf8;
+      border-left: 6px solid var(--green);
+      padding: 18px 20px;
+      min-height: 620px;
+      line-height: 1.75;
+    }
+
+    .preview h3 {
+      margin: 0 0 12px;
+      font-size: 20px;
+    }
+
+    .preview h4 {
+      margin: 22px 0 6px;
+      font-size: 15px;
+      color: var(--green);
+    }
+
+    .preview ul {
+      margin: 8px 0 0;
+      padding-left: 20px;
+    }
+
+    .preview li {
+      margin: 5px 0;
+    }
+
+    .risk {
+      color: #9b2c2c;
+      background: var(--rose-soft);
+      border-radius: 6px;
+      padding: 2px 6px;
+      white-space: nowrap;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 1180px) {
+      main {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .input-panel {
+        grid-column: 1 / -1;
+      }
+
+      .notes {
+        min-height: 300px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .topbar,
+      main {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      .brand {
+        min-width: 0;
+      }
+
+      .actions {
+        justify-content: flex-start;
+      }
+
+      .summary-strip,
+      .segmented {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div class="topbar">
+        <div class="brand">
+          <div class="mark">周</div>
+          <div>
+            <h1>个人周报生成器</h1>
+            <p class="subtitle">把零散记录整理成面向领导的项目状态更新</p>
+          </div>
+        </div>
+        <div class="actions">
+          <span class="chip">本地草稿</span>
+          <span class="chip">Markdown 输出</span>
+          <span class="chip">领导视角</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="input-panel">
+        <div class="section-head">
+          <div>
+            <h2>1. 粘贴本周记录</h2>
+            <p class="hint">支持任务、会议、风险、下周计划混在一起写。</p>
+          </div>
+        </div>
+        <div class="panel-body">
+          <textarea id="notes" class="notes" spellcheck="false">项目：客服工单智能分流试点
+汇报对象：直属领导
+
+周一：
+- 完成 4 月工单数据抽样，共 1,200 条，初步分出退款、物流、账号、发票、售后咨询 5 类。
+- 和客服主管确认历史标签质量不稳定，约 15% 工单存在标签错配。
+
+周二：
+- 跑通第一版分类提示词，准确率抽测约 78%。
+- 发现“退款 + 物流”混合问题容易被误判，需要增加二级标签。
+
+周三：
+- 整理试点流程：导出工单、脱敏、模型分类、人工复核、回写标签。
+- 和技术同学确认暂时不接生产系统，先用离线表格验证。
+
+周四：
+- 做了 60 条人工复核，发现模型对情绪强烈的投诉识别比较稳定。
+- 风险：客服侧希望下周就看到可用结果，但目前样本量还不够。
+
+周五：
+- 输出试点看板草稿，包含分类占比、误判样例、可自动处理比例。
+- 下周计划：补 300 条复核样本，优化二级标签，准备一次 30 分钟评审。
+
+需要支持：
+- 需要客服主管安排 1 位同事协助标注。
+- 需要技术同学确认脱敏字段清单。</textarea>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <h2>2. 选择汇报方式</h2>
+            <p class="hint">默认避免夸大成果，把风险和需要支持说清楚。</p>
+          </div>
+        </div>
+        <div class="panel-body control-grid">
+          <div class="field">
+            <label for="audience">汇报对象</label>
+            <select id="audience">
+              <option>直属领导</option>
+              <option>项目负责人</option>
+              <option>跨部门同步</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label>语气</label>
+            <div class="segmented" id="toneGroup">
+              <button class="active" data-tone="steady">稳重</button>
+              <button data-tone="concise">极简</button>
+              <button data-tone="warm">自然</button>
+            </div>
+          </div>
+
+          <div class="summary-strip">
+            <div class="metric">
+              <strong id="doneCount">6</strong>
+              <span>识别出的进展</span>
+            </div>
+            <div class="metric">
+              <strong id="riskCount">2</strong>
+              <span>需要关注事项</span>
+            </div>
+            <div class="metric">
+              <strong id="nextCount">3</strong>
+              <span>下周计划</span>
+            </div>
+            <div class="metric">
+              <strong id="supportCount">2</strong>
+              <span>协作请求</span>
+            </div>
+          </div>
+
+          <button class="primary" id="generateBtn">生成周报</button>
+
+          <div class="toolbar">
+            <button class="secondary" id="copyBtn">复制预览</button>
+            <button class="secondary" id="resetBtn">恢复样例</button>
+          </div>
+
+          <div class="advice">
+            建议先给领导看“本周推进、风险、下周安排”，细节放后面。周报不是流水账，重点是让对方知道项目是否可控。
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <h2>3. 周报预览</h2>
+            <p class="hint">可复制到飞书、企业微信、邮件或项目文档。</p>
+          </div>
+        </div>
+        <article class="preview" id="preview"></article>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const sample = document.getElementById("notes").value;
+    const preview = document.getElementById("preview");
+    const toneGroup = document.getElementById("toneGroup");
+    let tone = "steady";
+
+    function sentenceByTone() {
+      if (tone === "concise") {
+        return "整体进展正常，当前重点是补齐复核样本并压低混合场景误判。";
+      }
+      if (tone === "warm") {
+        return "本周试点已经从数据整理推进到离线验证，整体方向比较清楚，但还需要继续把样本和流程打扎实。";
+      }
+      return "本周客服工单智能分流试点按计划推进，已完成数据抽样、首版分类验证和离线试点流程梳理。当前项目可控，主要风险集中在样本量和业务预期管理。";
+    }
+
+    function renderReport() {
+      const audience = document.getElementById("audience").value;
+      preview.innerHTML = `
+        <h3>客服工单智能分流试点周报</h3>
+        <p><strong>汇报对象：</strong>${audience}</p>
+        <p>${sentenceByTone()}</p>
+
+        <h4>一、本周完成</h4>
+        <ul>
+          <li>完成 4 月工单数据抽样，共 1,200 条，初步划分退款、物流、账号、发票、售后咨询 5 类。</li>
+          <li>跑通首版分类提示词，抽测准确率约 78%，已经能覆盖主要高频问题。</li>
+          <li>梳理离线试点流程，暂不接入生产系统，先用表格完成验证和复核。</li>
+          <li>完成 60 条人工复核，初步发现模型对强情绪投诉识别较稳定。</li>
+          <li>输出试点看板草稿，包含分类占比、误判样例和可自动处理比例。</li>
+        </ul>
+
+        <h4>二、关键发现</h4>
+        <ul>
+          <li>历史标签质量存在波动，约 15% 工单可能有标签错配，需要后续复核时同步清理。</li>
+          <li>“退款 + 物流”等混合问题容易被误判，下一版需要增加二级标签。</li>
+          <li>离线验证路线更稳，可以先控制风险，再决定是否接入系统。</li>
+        </ul>
+
+        <h4>三、风险与需要关注</h4>
+        <ul>
+          <li><span class="risk">预期风险</span> 客服侧希望下周看到可用结果，但当前样本量不足，不建议直接承诺上线效果。</li>
+          <li><span class="risk">质量风险</span> 部分历史标签不准确，会影响模型判断和评估口径。</li>
+        </ul>
+
+        <h4>四、下周计划</h4>
+        <ul>
+          <li>补充 300 条人工复核样本，重点覆盖混合诉求和低频问题。</li>
+          <li>优化二级标签和提示词，复测分类准确率。</li>
+          <li>准备 30 分钟试点评审，明确后续是否进入小范围试运行。</li>
+        </ul>
+
+        <h4>五、需要支持</h4>
+        <ul>
+          <li>请客服主管安排 1 位同事协助标注复核样本。</li>
+          <li>请技术同学确认脱敏字段清单，避免试点材料包含敏感信息。</li>
+        </ul>
+      `;
+    }
+
+    toneGroup.addEventListener("click", (event) => {
+      if (event.target.tagName !== "BUTTON") return;
+      tone = event.target.dataset.tone;
+      [...toneGroup.querySelectorAll("button")].forEach((button) => {
+        button.classList.toggle("active", button === event.target);
+      });
+      renderReport();
+    });
+
+    document.getElementById("generateBtn").addEventListener("click", renderReport);
+    document.getElementById("copyBtn").addEventListener("click", async () => {
+      await navigator.clipboard.writeText(preview.innerText);
+      document.getElementById("copyBtn").textContent = "已复制";
+      setTimeout(() => document.getElementById("copyBtn").textContent = "复制预览", 1100);
+    });
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      document.getElementById("notes").value = sample;
+      renderReport();
+    });
+
+    renderReport();
+  </script>
+</body>
+</html>
+
