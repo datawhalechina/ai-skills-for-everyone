@@ -74,6 +74,8 @@
 
 如果你想把自己的流程接到更复杂的本地环境里，再看 [第 5 课：Agent 使用进阶](05-agent-advanced.md)。
 
+如果你已经装了很多 Skill，想统一整理、分组或同步到多个 Agent，可以再看 [第 6 课：用 Skills Manager 管理多个 Skill](06-manage-many-skills.md)。它是进阶管理工具，不是新手第一步。
+
 ## 开始前检查
 
 不管你选哪条路线，先确认这几件事：

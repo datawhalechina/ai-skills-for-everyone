@@ -42,6 +42,13 @@
 
 你会了解不同 Agent 的适合场景，以及在 Trae 里接入自定义 API 时要注意什么。
 
+## 第 6 课
+
+[用 Skills Manager 管理多个 Skill](06-manage-many-skills.md)
+
+你会用一个假的测试 Skill，试跑 Skills Manager 的导入、preset 和同步流程。
+这节课是可选进阶内容，适合已经装过多个 Skill 的人。
+
 ## 不同读者怎么走
 
 - 完全小白：第 0 课 → 第 1 课。
@@ -49,3 +56,4 @@
 - 已经用过 Skill：第 0 课 → 第 3 课。
 - 已经会搓 Skill：第 0 课 → 第 3 课 → 第 4 课。
 - 想了解 Agent 进阶用法：第 0 课 → 第 5 课。
+- 已经有很多 Skill，想统一管理：第 0 课 → 第 6 课。

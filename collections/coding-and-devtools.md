@@ -31,6 +31,7 @@
 | 小类 | 最省心 | 进阶 | 可改造 | 状态 |
 | --- | --- | --- | --- | --- |
 | 前端页面 / 小应用生成 | [frontend-design](../catalog/coding-and-devtools/frontend-design.md) | [frontend-ui-engineering](../catalog/coding-and-devtools/frontend-ui-engineering.md) | [web-artifacts-builder](../catalog/coding-and-devtools/web-artifacts-builder.md) | 已完成第一轮评测；[frontend-dev](../catalog/coding-and-devtools/frontend-dev.md) 作为高级视觉补充 |
+| Skill 管理 / Agent 环境管理 | 待补 | [Skills Manager](../catalog/coding-and-devtools/skills-manager.md) | 待补 | 可参考，适合已经有多个 Skill 或多个 Agent 的用户 |
 | 截图 / 设计稿转代码 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
 | 后端开发 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
 | 测试与质量 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
@@ -43,6 +44,16 @@
 - 最好有测试、脚本或明确执行步骤。
 - 需要标明支持的语言、框架和工具链。
 - 对会执行命令或改文件的 Skill，要特别检查安全边界。
+
+## Skill 管理 / Agent 环境管理
+
+这一类不是教读者“第一次使用 Skill”，而是解决 Skill 变多之后的整理、分组、同步和备份问题。
+
+当前可参考：
+
+- 进阶：[Skills Manager](../catalog/coding-and-devtools/skills-manager.md)。适合已经有多个 Skill、同时使用多个 Agent 的用户。它有图形界面和 CLI，但不适合放在新手主线前面。
+
+配套教程看：[第 6 课：用 Skills Manager 管理多个 Skill](../tutorial/06-manage-many-skills.md)。
 
 ## 前端页面 / 小应用生成
 

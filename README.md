@@ -42,6 +42,7 @@ AI Skills for Everyone 是一个面向普通人的开源 AI Skill 精选库。
 | [第 3 课：使用我们维护的 Skill 库](tutorial/03-use-skill-library.md) | 学会从场景合集、Skill 卡片和 starter 里选路线。 | ✅ |
 | [第 4 课：把自己的重复工作搓成 Skill](tutorial/04-make-your-own-skill.md) | 把重复任务整理成固定输入、固定步骤、固定输出、样例和提示词。 | ✅ |
 | [第 5 课：Agent 使用进阶](tutorial/05-agent-advanced.md) | 了解不同 Agent、API Key、自定义模型和命令确认。 | ✅ |
+| [第 6 课：用 Skills Manager 管理多个 Skill](tutorial/06-manage-many-skills.md) | 用假 Skill 试跑导入、preset 和同步流程，适合已经有多个 Skill 的进阶用户。 | ✅ |
 | [PPT Master Starter](kits/ppt-master-starter/README.md) | 第 1 课配套工作区，普通用户可以直接跟着操作。 | ✅ |
 | [Weekly Status Starter](kits/weekly-status-starter/README.md) | 把零散工作记录整理成周报或项目状态更新。 | ✅ |
 | [Skill Hub 总表](catalog/INDEX.md) | 按大类、小类和推荐位整理已收录 Skill。 | 🚧 |
