@@ -4,6 +4,14 @@
 
 跑通的标准很简单：你能用示例材料生成一个可编辑的 `.pptx` 文件，并且知道以后换成自己的材料该怎么做。
 
+本教程涉及三个东西：
+
+1. Trae：本地 AI 编程工具，用来打开文件夹和执行命令。
+2. PPT Master / PPT Skill：实际负责生成 PPT 的工具。
+3. ppt-master-starter：本教程提供的入门工作区，里面包含示例材料、提示词和脚本。
+
+你不需要一开始理解它们的内部原理，只需要按步骤跑通一次。
+
 ## 这节课最后会得到什么
 
 你会得到：
@@ -150,10 +158,13 @@ Trae 应该用中文告诉你：
 inputs/realistic-ppt-brief.md
 ```
 
+第一次测试时，不需要复制整个 md 内容。你只需要告诉 Trae：
+```text
+请使用 inputs/realistic-ppt-brief.md 作为输入材料，用 PPT Master 生成 3 到 5 页可编辑 PPT 小样。
+```
+
 它是一份接近真实工作的 PPT 需求：客服工单自动分流试点复盘汇报。
-
-让 Trae 用 PPT Master 跑一次测试。目标不用大，先生成 3 到 5 页就够。
-
+让 Trae 用 PPT Master 跑一次测试。
 成功以后，Trae 应该告诉你 `.pptx` 文件保存在哪里。通常会在 `outputs/` 或 Trae 创建的项目输出目录里。
 
 ## 第 6 步：检查测试结果
@@ -185,6 +196,17 @@ inputs/realistic-ppt-brief.md
 - 风格是什么。
 - 哪些内容最重要。
 - 有没有不能乱编的数据。
+
+## 找到生成的 PPT
+常见输出位置有两个，具体以 Trae 最终提示为准：
+
+1. starter 自带输出目录：
+   outputs/
+
+2. PPT Master 项目输出目录：
+   projects/{项目名}/exports/{文件名}.pptx
+
+生成完成后，优先让 Trae 明确告诉你最终 .pptx 的绝对路径。
 
 ## 你可以直接复制这段
 
@@ -222,6 +244,25 @@ inputs/realistic-ppt-brief.md
 - 输出文件不知道在哪。
 
 这些问题在 starter 里都写了对应处理方式。
+
+## 可选：配置 AI 模型（用于进阶功能）
+
+如果你希望使用 AI 生成内容和图片，需要额外配置：
+
+1. 打开项目根目录的 `.env` 文件（如果没有就复制 `.env.example`）
+
+2. 配置以下 API 密钥：
+   - OPENAI_API_KEY=your-openai-key    # 用于 GPT-5.5 内容生成
+   - ANTHROPIC_API_KEY=your-claude-key  # 用于 Claude SVG 生成
+   - IMAGE_API_KEY=your-image-key       # 用于 AI 生图（如 DALL-E）
+
+3. 保存后重启 Trae 或重新加载环境
+
+注意：
+.env 文件通常应该被 .gitignore 忽略。
+Github作为一个公开仓库，千万不要把自己真实的key上传上去。
+
+
 
 ## 本课小结
 
