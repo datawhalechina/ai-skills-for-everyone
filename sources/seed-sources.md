@@ -63,3 +63,6 @@
 | 2026-05-19 | 前端页面 / 小应用生成：`addyosmani/agent-skills/frontend-ui-engineering` | MIT，所属仓库约 43.5k stars，强调组件、状态、响应式和可访问性 | 已建 catalog 卡片，放入进阶推荐位 |
 | 2026-05-19 | 前端页面 / 小应用生成：`anthropics/skills/web-artifacts-builder` | Apache-2.0，带 React + TypeScript + Vite + Tailwind + shadcn/ui 脚手架和打包脚本 | 已建 catalog 卡片，放入可改造推荐位 |
 | 2026-05-19 | 前端页面 / 小应用生成：`MiniMax-AI/skills/frontend-dev` | MIT，所属仓库约 11.9k stars，适合首页、营销页、产品页和强动效页面 | 已建 catalog 卡片，作为高级视觉补充 |
+| 2026-05-21 | 论文阅读 / 论文知识库：`CHB-learner/scholarflow-claude-skills` | MIT，`codex-skill` 分支提供单一 `scholarflow` Codex skill，适合论文推荐、精读和 Obsidian 知识库工作流 | 已建 catalog 卡片，放入学习与研究合集的可改造位 |
+| 2026-05-21 | 论文阅读 / 科研流水线：`LigphiDonk/Oh-my--paper` | 面向完整科研流程，包含文献、实验、写作、审稿等多阶段 skills | 暂放学习与研究合集的进阶位候选，后续需单独试跑和补卡片 |
+| 2026-05-21 | 论文阅读 / 小白入门：`KaguraTart/paper-to-course` | MIT，单篇论文转离线 HTML 课程 + Markdown + PPTX，README 明确面向 students/newcomers | 已建 catalog 卡片，放入学习与研究合集的最省心推荐位；本地构建烟测已通过，后续可补 starter |
