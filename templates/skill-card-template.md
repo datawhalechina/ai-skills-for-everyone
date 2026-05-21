@@ -61,6 +61,18 @@ tags:
 3. 怎么启动或调用。
 4. 第一次测试应该用什么输入。
 
+## 使用前依赖
+
+在真正运行前，列出用户需要准备的东西：
+
+| 依赖 | 是否必需 | 说明 |
+| --- | --- | --- |
+| 模型 / API key | 是 / 否 | 例如 Claude、OpenAI、Anthropic、Gemini，是否需要外部 key。 |
+| 本地环境 | 是 / 否 | 例如 Python、Node.js、Docker、浏览器、Office、PDF 工具。 |
+| 第三方账号 | 是 / 否 | 例如 GitHub、Notion、Google Drive、飞书、Zotero。 |
+| 网络访问 | 是 / 否 | 是否需要访问 GitHub、npm、pip、arXiv 或其他外部服务。 |
+| 本地路径 | 是 / 否 | 输入目录、输出目录、知识库路径、素材路径。 |
+
 ## 示例输入
 
 ```text
