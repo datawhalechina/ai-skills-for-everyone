@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attention Is All You Need 入门课程</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --color-accent: #D94F30;
+      --color-accent-hover: #C4432A;
+      --color-accent-light: #FDEEE9;
+      --color-accent-muted: #E8836C;
+    }
+  </style>
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    <div class="nav-inner">
+      <span class="nav-title">Attention Is All You Need 入门课程</span>
+      <div class="nav-dots" id="nav-dots" role="tablist">
+        <button class="nav-dot" data-target="module-1" data-tooltip="问题与动机" role="tab" aria-label="Module 1: 问题与动机"></button>
+        <button class="nav-dot" data-target="module-2" data-tooltip="发展脉络" role="tab" aria-label="Module 2: 发展脉络"></button>
+        <button class="nav-dot" data-target="module-3" data-tooltip="方法对比" role="tab" aria-label="Module 3: 方法对比"></button>
+        <button class="nav-dot" data-target="module-4" data-tooltip="方法详解" role="tab" aria-label="Module 4: 方法详解"></button>
+        <button class="nav-dot" data-target="module-5" data-tooltip="实验与结果" role="tab" aria-label="Module 5: 实验与结果"></button>
+        <button class="nav-dot" data-target="module-6" data-tooltip="局限与展望" role="tab" aria-label="Module 6: 局限与展望"></button>
+      </div>
+    </div>
+  </nav>
+  <main id="main">
+
+<section class="module" id="module-1">
+  <header class="module-header">
+    <span class="module-number">01</span>
+    <h1 class="module-title">问题与动机</h1>
+    <p class="module-subtitle">为什么 2017 年还需要一种新的序列模型？</p>
+  </header>
+  <div class="module-content">
+    <section class="screen">
+      <h2 class="screen-heading">核心问题</h2>
+      <p>机器翻译可以形式化为学习条件概率：给定源序列 <code>x=(x1,...,xn)</code>，生成目标序列 <code>y=(y1,...,ym)</code>。</p>
+      <div class="formula-block animate-in">
+        <div class="formula-original">
+          <span class="formula-label">ORIGINAL FORMULA</span>
+          <div class="formula-math">p(y|x)=∏ p(yt | y&lt;t, x)</div>
+        </div>
+        <div class="formula-explanation">
+          <span class="formula-label">WHAT IT MEANS</span>
+          <div class="formula-line">
+            <span class="formula-symbol">x</span>
+            <span class="formula-english">输入句子，例如英文句子。</span>
+          </div>
+          <div class="formula-line">
+            <span class="formula-symbol">y</span>
+            <span class="formula-english">输出句子，例如德文或法文翻译。</span>
+          </div>
+          <div class="formula-line">
+            <span class="formula-symbol">y&lt;t</span>
+            <span class="formula-english">已经生成的前文，保证翻译是自回归生成。</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="screen">
+      <h2 class="screen-heading">旧方法的瓶颈</h2>
+      <div class="pattern-cards">
+        <article class="pattern-card">
+          <h3>RNN 逐步计算</h3>
+          <p>每个 token 依赖前一个 hidden state，训练时很难在同一个句子内部完全并行。</p>
+        </article>
+        <article class="pattern-card">
+          <h3>长距离依赖路径长</h3>
+          <p>远处 token 的信息要穿过很多步，梯度和表示都容易被稀释。</p>
+        </article>
+        <article class="pattern-card">
+          <h3>卷积需要堆层</h3>
+          <p>ConvS2S、ByteNet 可以并行，但要靠层数扩大感受野。</p>
+        </article>
+      </div>
+    </section>
+  </div>
+</section>
+
+<section class="module" id="module-2">
+  <header class="module-header">
+    <span class="module-number">02</span>
+    <h1 class="module-title">发展脉络</h1>
+    <p class="module-subtitle">Transformer 不是凭空出现的，它是在解决“更短路径 + 更高并行”的问题。</p>
+  </header>
+  <div class="module-content">
+    <section class="screen">
+      <h2 class="screen-heading">从循环到注意力</h2>
+      <div class="timeline-container animate-in">
+        <div class="timeline-line"></div>
+        <div class="timeline-item" data-year="2014">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">2014</span>
+            <h4>Seq2Seq</h4>
+            <p class="timeline-desc">编码器-解码器框架成为机器翻译主流。</p>
+            <div class="timeline-method-tag">RNN</div>
+          </div>
+        </div>
+        <div class="timeline-item" data-year="2015">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">2015</span>
+            <h4>Attention over RNN states</h4>
+            <p class="timeline-desc">注意力缓解固定向量瓶颈，但主干仍依赖 RNN。</p>
+            <div class="timeline-method-tag">Alignment</div>
+          </div>
+        </div>
+        <div class="timeline-item" data-year="2017">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-year">2017</span>
+            <h4>Transformer</h4>
+            <p class="timeline-desc">完全用 self-attention 与 FFN 做序列转导。</p>
+            <div class="timeline-method-tag">Self-Attention</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+<section class="module" id="module-3">
+  <header class="module-header">
+    <span class="module-number">03</span>
+    <h1 class="module-title">主流方法对比</h1>
+    <p class="module-subtitle">把关键差异压缩成三件事：路径长度、并行性、计算代价。</p>
+  </header>
+  <div class="module-content">
+    <section class="screen">
+      <h2 class="screen-heading">方法对比表</h2>
+      <div class="comparison-table-container animate-in">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>方法</th>
+              <th>主计算</th>
+              <th>长依赖路径</th>
+              <th>训练并行性</th>
+              <th>主要代价</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="method-row">
+              <td><span class="method-name">RNN/LSTM</span></td>
+              <td>隐状态递推</td>
+              <td>O(n)</td>
+              <td>低</td>
+              <td>时间步瓶颈</td>
+            </tr>
+            <tr class="method-row">
+              <td><span class="method-name">ConvS2S</span></td>
+              <td>堆叠卷积</td>
+              <td>随感受野增长</td>
+              <td>高</td>
+              <td>需要足够深度</td>
+            </tr>
+            <tr class="method-row highlight-row">
+              <td><span class="method-name highlight">Transformer</span></td>
+              <td>Self-attention + FFN</td>
+              <td>每层 O(1)</td>
+              <td>高</td>
+              <td>O(n²) attention</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</section>
+
+<section class="module" id="module-4">
+  <header class="module-header">
+    <span class="module-number">04</span>
+    <h1 class="module-title">本文方法详解</h1>
+    <p class="module-subtitle">Transformer = 多头注意力负责路由，前馈网络负责变换，位置编码负责顺序。</p>
+  </header>
+  <div class="module-content">
+    <section class="screen">
+      <h2 class="screen-heading">模型规格</h2>
+      <div class="step-cards">
+        <article class="step-card">
+          <span class="step-num">1</span>
+          <div class="step-body">
+            <h3>Encoder / Decoder</h3>
+            <p>Base 模型使用 6 层 encoder 和 6 层 decoder。</p>
+          </div>
+        </article>
+        <article class="step-card">
+          <span class="step-num">2</span>
+          <div class="step-body">
+            <h3>Hidden Size</h3>
+            <p><code>d_model=512</code>，前馈层中间维度 <code>d_ff=2048</code>。</p>
+          </div>
+        </article>
+        <article class="step-card">
+          <span class="step-num">3</span>
+          <div class="step-body">
+            <h3>Multi-Head</h3>
+            <p>Base 模型使用 8 个 heads，每个 head 的 <code>d_k=d_v=64</code>。</p>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="screen">
+      <h2 class="screen-heading">核心公式拆解</h2>
+      <div class="formula-block animate-in">
+        <div class="formula-original">
+          <span class="formula-label">SCALED DOT-PRODUCT ATTENTION</span>
+          <div class="formula-math">Attention(Q,K,V)=softmax(QKᵀ / √dk)V</div>
+        </div>
+        <div class="formula-explanation">
+          <span class="formula-label">PLAIN ENGLISH</span>
+          <div class="formula-line">
+            <span class="formula-symbol">QKᵀ</span>
+            <span class="formula-english">每个 query 和每个 key 做相似度打分。</span>
+          </div>
+          <div class="formula-line">
+            <span class="formula-symbol">√dk</span>
+            <span class="formula-english">缩放项，避免维度大时 softmax 过度尖锐。</span>
+          </div>
+          <div class="formula-line">
+            <span class="formula-symbol">V</span>
+            <span class="formula-english">用归一化权重对 value 加权求和，得到上下文表示。</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+<section class="module" id="module-5">
+  <header class="module-header">
+    <span class="module-number">05</span>
+    <h1 class="module-title">实验与结果</h1>
+    <p class="module-subtitle">结果重点不是“又涨了 BLEU”，而是质量与训练成本一起变好。</p>
+  </header>
+  <div class="module-content">
+    <section class="screen">
+      <h2 class="screen-heading">关键结果</h2>
+      <div class="comparison-table-container animate-in">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>任务</th>
+              <th>模型</th>
+              <th>BLEU</th>
+              <th>训练信息</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>WMT 2014 EN-DE</td>
+              <td>Transformer big</td>
+              <td>28.4</td>
+              <td>8 P100，约 3.5 天</td>
+            </tr>
+            <tr>
+              <td>WMT 2014 EN-FR</td>
+              <td>Transformer big</td>
+              <td>41.0 / 41.8</td>
+              <td>显著低于当时强基线训练成本</td>
+            </tr>
+            <tr>
+              <td>Constituency Parsing</td>
+              <td>Transformer</td>
+              <td>强于多个已有模型</td>
+              <td>说明不只适合翻译</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</section>
+
+<section class="module" id="module-6">
+  <header class="module-header">
+    <span class="module-number">06</span>
+    <h1 class="module-title">局限与展望</h1>
+    <p class="module-subtitle">Transformer 的胜利不是没有代价，尤其是长序列上的 O(n²) attention。</p>
+  </header>
+  <div class="module-content">
+    <section class="screen">
+      <h2 class="screen-heading">你应该记住什么</h2>
+      <div class="pattern-cards">
+        <article class="pattern-card">
+          <h3>关键洞察</h3>
+          <p>序列建模不一定要按时间递推，token 可以直接互相读取。</p>
+        </article>
+        <article class="pattern-card">
+          <h3>主要局限</h3>
+          <p>全量 self-attention 对序列长度是二次复杂度，长上下文会变贵。</p>
+        </article>
+        <article class="pattern-card">
+          <h3>后续影响</h3>
+          <p>BERT、GPT、T5 等大模型都继承并放大了这个架构方向。</p>
+        </article>
+      </div>
+    </section>
+    <section class="screen">
+      <h2 class="screen-heading">理解测验</h2>
+      <div class="quiz-container animate-in">
+        <p><strong>问题：</strong>Transformer 相比 RNN 的核心训练优势是什么？</p>
+        <ul>
+          <li>A. 可以完全不需要位置编码</li>
+          <li>B. 序列内部计算更容易并行化</li>
+          <li>C. 参数量一定更少</li>
+          <li>D. 不需要 softmax</li>
+        </ul>
+        <p><strong>答案：</strong>B。它把主计算变成 attention 和 FFN 的并行矩阵运算。</p>
+      </div>
+    </section>
+  </div>
+</section>
+
+  </main>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<section class="module" id="module-1">
+  <header class="module-header">
+    <span class="module-number">01</span>
+    <h1 class="module-title">问题与动机</h1>
+    <p class="module-subtitle">为什么 2017 年还需要一种新的序列模型？</p>
+  </header>
+  <div class="module-content">
+    <section class="screen">
+      <h2 class="screen-heading">核心问题</h2>
+      <p>机器翻译可以形式化为学习条件概率：给定源序列 <code>x=(x1,...,xn)</code>，生成目标序列 <code>y=(y1,...,ym)</code>。</p>
+      <div class="formula-block animate-in">
+        <div class="formula-original">
+          <span class="formula-label">ORIGINAL FORMULA</span>
+          <div class="formula-math">p(y|x)=∏ p(yt | y&lt;t, x)</div>
+        </div>
+        <div class="formula-explanation">
+          <span class="formula-label">WHAT IT MEANS</span>
+          <div class="formula-line">
+            <span class="formula-symbol">x</span>
+            <span class="formula-english">输入句子，例如英文句子。</span>
+          </div>
+          <div class="formula-line">
+            <span class="formula-symbol">y</span>
+            <span class="formula-english">输出句子，例如德文或法文翻译。</span>
+          </div>
+          <div class="formula-line">
+            <span class="formula-symbol">y&lt;t</span>
+            <span class="formula-english">已经生成的前文，保证翻译是自回归生成。</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="screen">
+      <h2 class="screen-heading">旧方法的瓶颈</h2>
+      <div class="pattern-cards">
+        <article class="pattern-card">
+          <h3>RNN 逐步计算</h3>
+          <p>每个 token 依赖前一个 hidden state，训练时很难在同一个句子内部完全并行。</p>
+        </article>
+        <article class="pattern-card">
+          <h3>长距离依赖路径长</h3>
+          <p>远处 token 的信息要穿过很多步，梯度和表示都容易被稀释。</p>
+        </article>
+        <article class="pattern-card">
+          <h3>卷积需要堆层</h3>
+          <p>ConvS2S、ByteNet 可以并行，但要靠层数扩大感受野。</p>
+        </article>
+      </div>
+    </section>
+  </div>
+</section>

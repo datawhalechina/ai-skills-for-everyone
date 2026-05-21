@@ -1,0 +1,44 @@
+<section class="module" id="module-5">
+  <header class="module-header">
+    <span class="module-number">05</span>
+    <h1 class="module-title">实验与结果</h1>
+    <p class="module-subtitle">结果重点不是“又涨了 BLEU”，而是质量与训练成本一起变好。</p>
+  </header>
+  <div class="module-content">
+    <section class="screen">
+      <h2 class="screen-heading">关键结果</h2>
+      <div class="comparison-table-container animate-in">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>任务</th>
+              <th>模型</th>
+              <th>BLEU</th>
+              <th>训练信息</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>WMT 2014 EN-DE</td>
+              <td>Transformer big</td>
+              <td>28.4</td>
+              <td>8 P100，约 3.5 天</td>
+            </tr>
+            <tr>
+              <td>WMT 2014 EN-FR</td>
+              <td>Transformer big</td>
+              <td>41.0 / 41.8</td>
+              <td>显著低于当时强基线训练成本</td>
+            </tr>
+            <tr>
+              <td>Constituency Parsing</td>
+              <td>Transformer</td>
+              <td>强于多个已有模型</td>
+              <td>说明不只适合翻译</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</section>

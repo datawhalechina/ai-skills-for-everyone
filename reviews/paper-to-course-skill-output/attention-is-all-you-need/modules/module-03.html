@@ -1,0 +1,48 @@
+<section class="module" id="module-3">
+  <header class="module-header">
+    <span class="module-number">03</span>
+    <h1 class="module-title">主流方法对比</h1>
+    <p class="module-subtitle">把关键差异压缩成三件事：路径长度、并行性、计算代价。</p>
+  </header>
+  <div class="module-content">
+    <section class="screen">
+      <h2 class="screen-heading">方法对比表</h2>
+      <div class="comparison-table-container animate-in">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>方法</th>
+              <th>主计算</th>
+              <th>长依赖路径</th>
+              <th>训练并行性</th>
+              <th>主要代价</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="method-row">
+              <td><span class="method-name">RNN/LSTM</span></td>
+              <td>隐状态递推</td>
+              <td>O(n)</td>
+              <td>低</td>
+              <td>时间步瓶颈</td>
+            </tr>
+            <tr class="method-row">
+              <td><span class="method-name">ConvS2S</span></td>
+              <td>堆叠卷积</td>
+              <td>随感受野增长</td>
+              <td>高</td>
+              <td>需要足够深度</td>
+            </tr>
+            <tr class="method-row highlight-row">
+              <td><span class="method-name highlight">Transformer</span></td>
+              <td>Self-attention + FFN</td>
+              <td>每层 O(1)</td>
+              <td>高</td>
+              <td>O(n²) attention</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</section>

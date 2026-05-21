@@ -1,0 +1,39 @@
+<section class="module" id="module-6">
+  <header class="module-header">
+    <span class="module-number">06</span>
+    <h1 class="module-title">局限与展望</h1>
+    <p class="module-subtitle">Transformer 的胜利不是没有代价，尤其是长序列上的 O(n²) attention。</p>
+  </header>
+  <div class="module-content">
+    <section class="screen">
+      <h2 class="screen-heading">你应该记住什么</h2>
+      <div class="pattern-cards">
+        <article class="pattern-card">
+          <h3>关键洞察</h3>
+          <p>序列建模不一定要按时间递推，token 可以直接互相读取。</p>
+        </article>
+        <article class="pattern-card">
+          <h3>主要局限</h3>
+          <p>全量 self-attention 对序列长度是二次复杂度，长上下文会变贵。</p>
+        </article>
+        <article class="pattern-card">
+          <h3>后续影响</h3>
+          <p>BERT、GPT、T5 等大模型都继承并放大了这个架构方向。</p>
+        </article>
+      </div>
+    </section>
+    <section class="screen">
+      <h2 class="screen-heading">理解测验</h2>
+      <div class="quiz-container animate-in">
+        <p><strong>问题：</strong>Transformer 相比 RNN 的核心训练优势是什么？</p>
+        <ul>
+          <li>A. 可以完全不需要位置编码</li>
+          <li>B. 序列内部计算更容易并行化</li>
+          <li>C. 参数量一定更少</li>
+          <li>D. 不需要 softmax</li>
+        </ul>
+        <p><strong>答案：</strong>B。它把主计算变成 attention 和 FFN 的并行矩阵运算。</p>
+      </div>
+    </section>
+  </div>
+</section>

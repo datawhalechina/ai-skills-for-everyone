@@ -1,0 +1,81 @@
+{
+  "title": "Attention Is All You Need",
+  "subtitle": "Paper-to-Course smoke test · NeurIPS 2017",
+  "slides": [
+    {
+      "type": "title",
+      "title": "Attention Is All You Need",
+      "subtitle": "Transformer 入门课程烟测",
+      "note": "基于 arXiv:1706.03762"
+    },
+    {
+      "type": "outline",
+      "title": "课程结构",
+      "items": ["问题与动机", "发展脉络", "主流方法对比", "Transformer 方法详解", "实验结果", "局限与展望"]
+    },
+    {
+      "type": "content",
+      "title": "为什么需要新架构",
+      "layout": "cards-3",
+      "cards": [
+        { "title": "RNN 瓶颈", "body": "训练时沿 token 顺序递推，序列内部难以并行。", "color": "coral" },
+        { "title": "长依赖难", "body": "远距离 token 信息需要穿过多个状态或层。", "color": "blue" },
+        { "title": "目标", "body": "让全局依赖建模变成高效矩阵运算。", "color": "green" }
+      ]
+    },
+    {
+      "type": "timeline",
+      "title": "方法演进",
+      "items": [
+        { "year": "2014", "title": "Seq2Seq", "desc": "RNN encoder-decoder 成为主流。" },
+        { "year": "2015", "title": "Attention", "desc": "在 RNN 状态上做软对齐。" },
+        { "year": "2017", "title": "Transformer", "desc": "主干完全基于 self-attention。" }
+      ]
+    },
+    {
+      "type": "table",
+      "title": "方法对比",
+      "headers": ["方法", "主计算", "并行性", "主要短板"],
+      "rows": [
+        ["RNN/LSTM", "递推状态", "低", "时间步瓶颈"],
+        ["ConvS2S", "堆叠卷积", "高", "远依赖需要深层"],
+        ["Transformer", "Self-attention + FFN", "高", "O(n²) attention"]
+      ],
+      "highlightRows": [2]
+    },
+    {
+      "type": "formula",
+      "title": "核心公式",
+      "formula": "Attention(Q,K,V)=softmax(QK^T / sqrt(d_k))V",
+      "lines": [
+        { "symbol": "QK^T", "english": "Query 和 key 的相似度矩阵。" },
+        { "symbol": "sqrt(d_k)", "english": "缩放项，避免 softmax 过度尖锐。" },
+        { "symbol": "V", "english": "被 attention 权重加权汇总的 value。" }
+      ]
+    },
+    {
+      "type": "stats",
+      "title": "论文报告结果",
+      "stats": [
+        { "value": "28.4", "label": "EN-DE BLEU", "color": "coral", "big": true },
+        { "value": "41.0+", "label": "EN-FR BLEU", "color": "blue", "big": true },
+        { "value": "3.5d", "label": "Big model on 8 P100", "color": "green", "big": false }
+      ]
+    },
+    {
+      "type": "limitations",
+      "title": "局限与展望",
+      "limitations": ["全量 self-attention 是 O(n²)。", "原论文主要验证翻译和 parsing。", "位置编码不是最终答案。"],
+      "futureWork": ["稀疏/局部 attention。", "多模态输入。", "更大规模预训练。"]
+    },
+    {
+      "type": "summary",
+      "title": "带走三句话",
+      "items": [
+        { "text": "Transformer 让 token 之间直接通信。", "color": "coral" },
+        { "text": "多头注意力保留多个关系视角。", "color": "blue" },
+        { "text": "并行矩阵运算为后来的大模型规模化铺路。", "color": "green" }
+      ]
+    }
+  ]
+}
