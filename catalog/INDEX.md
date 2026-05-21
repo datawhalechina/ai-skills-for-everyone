@@ -4,11 +4,11 @@
 
 这个库不追求把所有 Skill 都收进来。每个大类会拆成几个小类，每个小类尽量只保留 2 到 3 个推荐位：
 
-- 最省心：普通人优先试，最好有教程、starter 或清楚的开箱路线。
+- 最省心：普通人优先试，任务边界清楚，输入输出直观；教程、starter 或清楚的开箱路线是加分项。
 - 进阶：能力更完整，但需要一点环境配置或 Agent 使用经验。
 - 可改造：适合懂一点技术的人继续改，或者适合作为二次开发底座。
 
-“最省心”推荐位有时会是同一个 Skill 的 starter 路线，不一定是另一个独立项目。
+“最省心”推荐位可以是独立 Skill，也可以是同一个 Skill 的 starter 路线。
 
 如果某个小类还没有找到足够靠谱的项目，就先留空，不硬凑。
 
@@ -33,7 +33,7 @@
 | 小类 | 最省心 | 进阶 | 可改造 | 状态 |
 | --- | --- | --- | --- | --- |
 | 资料整理 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
-| 论文阅读 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
+| 论文阅读 | [Paper-to-Course](learning-and-research/paper-to-course.md) | [Oh My Paper](https://github.com/LigphiDonk/Oh-my--paper) | [ScholarFlow](learning-and-research/scholarflow.md) | 已完成本地试跑，适合作为小白论文入门入口 |
 | 知识卡片 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
 | 复习计划 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
 
@@ -55,6 +55,7 @@
 | 小类 | 最省心 | 进阶 | 可改造 | 状态 |
 | --- | --- | --- | --- | --- |
 | 前端页面 / 小应用生成 | [frontend-design](coding-and-devtools/frontend-design.md) | [frontend-ui-engineering](coding-and-devtools/frontend-ui-engineering.md) | [web-artifacts-builder](coding-and-devtools/web-artifacts-builder.md) | 已完成第一轮评测；[frontend-dev](coding-and-devtools/frontend-dev.md) 作为高级视觉补充 |
+| Skill 管理 / Agent 环境管理 | 待补 | [Skills Manager](coding-and-devtools/skills-manager.md) | 待补 | 可参考，适合已经有多个 Skill 的用户，不作为新手首选 |
 | 截图 / 设计稿转代码 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
 | 后端开发 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
 | 测试与质量 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
@@ -80,6 +81,6 @@
 1. 先说明它解决哪个小类的问题。
 2. 再说明它适合放在“最省心 / 进阶 / 可改造”里的哪一个位置。
 3. 补来源、许可证、使用门槛、测试记录和风险。
-4. 如果普通人很难直接用，再考虑补一个 starter。
+4. 如果普通人很难直接用，再考虑补教程或 starter。
 
 收录规则看：[收录标准](../docs/curation-guide.md)
