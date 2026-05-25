@@ -87,6 +87,28 @@ https://atomgit.com/hugohe3/ppt-master
 
 普通用户仍然建议先走 [PPT Master Starter](../../kits/ppt-master-starter/README.md)，里面会按 GitHub、AtomGit、备用下载的顺序处理。
 
+## 模型和图片配置
+
+PPT Master 不要求必须配置 `gpt-image-2` key。基础用法里，当前 Agent 会读取 `SKILL.md`，负责内容理解、页面规划、逐页生成 SVG 和导出 `.pptx`。如果 Agent 本身带有图片生成能力，也可以用 Agent 自带能力补齐图片资产。
+
+更推荐的进阶配置是：
+
+- 主 Agent 模型使用 Anthropic Claude Opus 这一档的强模型，负责长文档理解、设计判断和 SVG 生成。
+- 图片生成后端使用 OpenAI `gpt-image-2`，负责封面图、插图、示意图等图片资产。
+
+`gpt-image-2` 配置写在本地 `.env` 或环境变量里：
+
+```text
+IMAGE_BACKEND=openai
+OPENAI_API_KEY=your-openai-key
+OPENAI_MODEL=gpt-image-2
+OPENAI_OUTPUT_FORMAT=png
+OPENAI_BACKGROUND=auto
+OPENAI_MODERATION=auto
+```
+
+不要使用 `IMAGE_API_KEY`、`IMAGE_MODEL`、`IMAGE_BASE_URL` 这类旧式全局变量；PPT Master 当前要求使用服务商专属变量名。
+
 ## 示例输入
 
 ```text
@@ -116,6 +138,7 @@ https://atomgit.com/hugohe3/ppt-master
 
 - 不是纯网页工具，需要 Python 环境和 Agent 工具配合。
 - 高质量输出依赖模型能力和上下文窗口，项目 README 也明确提醒这一点。
+- 不配 `gpt-image-2` key 也能使用，但遇到需要 AI 图片资产的页面时，效果取决于 Agent 自带图片能力，或者需要手动补图。
 - 对普通非技术用户来说，安装和排错仍有门槛。
 - 生成 PPT 前后可能会执行脚本、读写文件，要在可信工作区里使用。
 

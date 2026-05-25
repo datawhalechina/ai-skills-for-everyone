@@ -1,5 +1,6 @@
 # Local third-party projects and downloaded mirrors
 /ppt-master/
+/AlphaStS-src/
 
 # Generated PPT Master outputs
 /kits/ppt-master-starter/outputs/*
@@ -12,6 +13,7 @@
 *.7z
 
 # Local agent/editor state
+.codex/
 .agents/
 .trae/
 .cursor/

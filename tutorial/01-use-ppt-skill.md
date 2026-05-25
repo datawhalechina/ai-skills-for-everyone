@@ -245,22 +245,34 @@ inputs/realistic-ppt-brief.md
 
 这些问题在 starter 里都写了对应处理方式。
 
-## 可选：配置 AI 模型（用于进阶功能）
+## 可选：模型和图片配置
 
-如果你希望使用 AI 生成内容和图片，需要额外配置：
+先说结论：不配置 `gpt-image-2` 的 key，也可以使用 PPT Master。PPT Master 的核心是让当前 Agent 按 `SKILL.md` 理解材料、规划页面、逐页生成 SVG，再导出可编辑 `.pptx`。如果你使用的 Agent 本身已经有足够强的模型能力和图片生成能力，它也可以直接走 Agent 自带能力完成图片资产。
 
-1. 打开项目根目录的 `.env` 文件（如果没有就复制 `.env.example`）
+但如果你想要更稳定、更好看的结果，推荐配置成两层：
 
-2. 配置以下 API 密钥：
-   - OPENAI_API_KEY=your-openai-key    # 用于 GPT-5.5 内容生成
-   - ANTHROPIC_API_KEY=your-claude-key  # 用于 Claude SVG 生成
-   - IMAGE_API_KEY=your-image-key       # 用于 AI 生图（如 DALL-E）
+1. **主 Agent 模型**：优先使用 Anthropic Claude Opus 这一档的强模型。它负责理解材料、做页面策略、写 SVG、检查可编辑 PPT。
+2. **图片生成后端**：使用 OpenAI `gpt-image-2`。它只负责生成 PPT 中需要的插图、封面图、示意图等图片资产。
 
-3. 保存后重启 Trae 或重新加载环境
+注意，这两件事不是同一个配置：
 
-注意：
-.env 文件通常应该被 .gitignore 忽略。
-Github作为一个公开仓库，千万不要把自己真实的key上传上去。
+- 主 Agent 模型通常在 Trae、Claude Code、Codex、Cursor 等工具自己的模型设置里配置。
+- `gpt-image-2` 是 PPT Master 生图脚本的图片后端，写在本地 `.env` 或环境变量里。
+
+如果要给 PPT Master 配 `gpt-image-2`，使用下面这种变量名：
+
+```text
+IMAGE_BACKEND=openai
+OPENAI_API_KEY=your-openai-key
+OPENAI_MODEL=gpt-image-2
+OPENAI_OUTPUT_FORMAT=png
+OPENAI_BACKGROUND=auto
+OPENAI_MODERATION=auto
+```
+
+不要使用旧式的 `IMAGE_API_KEY`、`IMAGE_MODEL`、`IMAGE_BASE_URL`。PPT Master 现在要求使用各服务商自己的变量名，比如 `OPENAI_API_KEY`。
+
+`.env` 文件只应该放在你自己的本地电脑里。不要把真实 key 写进聊天记录、截图、公开仓库、issue 或教程示例里。
 
 
 
