@@ -100,8 +100,8 @@
 - [x] 先把写作与办公拆成小类推荐位表，每个小类明确缺哪个位置。
 - [x] 写作与办公继续补：周报 / 状态更新。已补 Weekly Status 自研轻 Skill、Weekly Status Starter；进阶路线只保留 Lark CLI Agent Skills 和 MLE-Agent。
 - [x] 开发与调试补：前端页面 / 小应用生成。已补 frontend-design、frontend-ui-engineering、web-artifacts-builder、frontend-dev，并完成 4 × 3 本地试跑记录。
-- [ ] 优化 Weekly Status Skill：目前 starter 已完成，但 Skill 还偏简陋，生成的周报版式和层次不够好看，需要继续打磨输出结构、标题、重点摘要和领导视角表达。
-- [ ] 改造 Weekly Status Skill：补自动报告生成能力，例如读取固定输入目录、合并多份材料、生成固定文件名、输出领导版摘要和完整周报两个版本。
+- [x] 优化 Weekly Status Skill：已补当前状态、本周结论、领导版摘要、完整周报和领导视角表达。
+- [x] 改造 Weekly Status Skill：已支持读取固定 `inputs/`，输出 `outputs/leader-summary.md` 和 `outputs/weekly-report.md` 两个版本。
 - [ ] 写作与办公继续补：会议纪要整理。
 - [ ] 写作与办公继续补：长文档摘要。
 - [ ] 写作与办公继续补：表格分析报告。
@@ -133,7 +133,7 @@
 1. 给每个小类先补 3 个候选来源，再筛成推荐位。
 2. 第 0 课补一张“你该走哪条路线”的简单表格。
 3. 第 3 课补一张 Skill 卡片阅读示例。
-4. 优化并改造 `skills/weekly-status/`：先提升周报版式和层次，再补自动报告生成能力。
+4. 基于真实用户反馈继续打磨 `skills/weekly-status/` 的周报语气、版式和输入模板。
 5. 继续补开发与调试：截图 / 设计稿转代码。
 6. 继续补写作与办公里的邮件、会议纪要候选和 starter。
 

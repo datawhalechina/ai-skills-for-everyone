@@ -45,7 +45,7 @@ tags:
 
 ## 一句话说明
 
-Weekly Status 是本项目维护的轻量周报 Skill，用来把零散工作记录整理成自然、可信、可复核的中文周报或项目状态更新。
+Weekly Status 是本项目维护的轻量周报 Skill，用来把零散工作记录整理成自然、可信、可复核的中文 Markdown 周报，并同时生成领导版摘要。
 
 ## 适合谁
 
@@ -66,7 +66,7 @@ Weekly Status 是本项目维护的轻量周报 Skill，用来把零散工作记
 1. 打开 [Weekly Status Starter](../../kits/weekly-status-starter/README.md)。
 2. 把本周记录放进 `inputs/weekly-notes.md`。
 3. 复制 `prompts/normal-use.txt` 给 Trae Agent。
-4. 检查 `outputs/weekly-report.md`。
+4. 检查 `outputs/leader-summary.md` 和 `outputs/weekly-report.md`。
 
 进阶用户可以直接把 [SKILL.md](../../skills/weekly-status/SKILL.md) 放到自己使用的 Agent Skill 目录里，再让 Agent 按这个 Skill 处理周报。
 
@@ -82,8 +82,9 @@ Weekly Status 是本项目维护的轻量周报 Skill，用来把零散工作记
 
 ## 预期输出
 
-- 一份中文周报或项目状态更新。
-- 默认包含本周完成、进行中、风险和阻塞、下周计划、需要协作、待确认。
+- `outputs/leader-summary.md`：适合领导快速浏览的状态判断和关注事项。
+- `outputs/weekly-report.md`：先给结论、再展开进展、风险、下周动作和协作事项的中文周报。
+- 默认包含当前状态、本周结论、关键进展、风险与判断、下周重点、需要协作、待确认和明细记录。
 - 不编造输入里没有的进展和数据。
 
 ## 优点
@@ -95,16 +96,14 @@ Weekly Status 是本项目维护的轻量周报 Skill，用来把零散工作记
 
 ## 限制
 
-- 它不是自动抓取办公系统数据的工具，需要用户自己提供材料。
+- 它不是自动抓取办公系统数据的工具，需要用户自己提供材料到 `inputs/`。
 - 输入太少时，只能生成很短的周报，或者先追问。
 - 目前主要面向中文办公场景。
 
 ## 后续改造方向
 
-- 读取固定输入目录里的多份材料，自动合并成一份周报输入。
-- 固定输出文件名和目录，例如 `outputs/weekly-report.md`。
-- 同时生成“领导版摘要”和“完整周报”两个版本。
-- 继续优化版式、层次和措词，让输出更像成熟办公文档。
+- 根据真实用户反馈继续优化版式、层次和措词。
+- 后续可以接入更复杂的数据来源，例如 Git、飞书文档或会议转写，但当前 starter 暂不接入真实办公系统。
 
 ## 风险和注意事项
 

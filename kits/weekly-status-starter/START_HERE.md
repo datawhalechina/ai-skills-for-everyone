@@ -8,7 +8,7 @@
 
 1. 把本周零散记录放进 `inputs/`。
 2. 用 Trae 打开这个文件夹，复制 `prompts/normal-use.txt`。
-3. 检查 `outputs/weekly-report.md` 里的周报草稿。
+3. 检查 `outputs/leader-summary.md` 和 `outputs/weekly-report.md`。
 
 ## 第 0 步：确认你打开的是整个文件夹
 
@@ -48,7 +48,7 @@ samples/sample-weekly-notes.md
 prompts/normal-use.txt
 ```
 
-如果它能生成一份像样的周报，再换成你的真实材料。
+如果它能生成一份带“当前状态”的领导版摘要和一份完整周报，再换成你的真实材料。
 
 ## 第 2 步：准备你的输入
 
@@ -83,10 +83,11 @@ prompts/normal-use.txt
 默认输出路径是：
 
 ```text
+outputs/leader-summary.md
 outputs/weekly-report.md
 ```
 
-如果 Trae 没有写文件，只是在聊天框里输出了周报，也可以先用。等内容满意以后，再让它保存到 `outputs/weekly-report.md`。
+如果 Trae 没有写文件，只是在聊天框里输出了内容，也可以先用。等内容满意以后，再让它保存到上面两个文件。
 
 ## 第 4 步：检查周报
 
@@ -94,8 +95,11 @@ outputs/weekly-report.md
 
 - 有没有编造你没写过的进展。
 - 有没有把“正在做”和“已经完成”混在一起。
-- 风险和阻塞是不是写清楚了。
+- `leader-summary.md` 是不是足够短，能让领导快速扫完。
+- `weekly-report.md` 是不是先给结论，再展开进展和明细。
+- 风险有没有写出影响和下一步处理方式。
 - 下周计划是不是具体。
+- 需要协作的事项有没有写清楚对象和期望结果。
 - 语气是不是适合发给直属领导或项目负责人。
 - 有没有太随意、太邀功，或者把问题写成甩锅。
 - 有没有泄露客户名、金额、账号、内部系统名。
@@ -109,7 +113,7 @@ outputs/weekly-report.md
 如果语气不适合给领导看，可以追加：
 
 ```text
-请把这版改成适合发给直属领导看的周报：语气稳重、简洁，突出进展、风险、下周计划和需要支持的事项，不要太口语，也不要显得邀功。
+请把这版改成适合发给直属领导看的周报：先说当前状态和本周结论，再写关键进展、风险影响、下周动作和需要支持的事项，不要太口语，也不要显得邀功。
 ```
 
 或者：
@@ -144,5 +148,5 @@ outputs/weekly-report.md
 1. 用 Trae 打开 `weekly-status-starter` 文件夹。
 2. 把 `samples/sample-weekly-notes.md` 复制到 `inputs/weekly-notes.md`。
 3. 复制 `prompts/normal-use.txt` 给 Trae Agent。
-4. 让它生成 `outputs/weekly-report.md`。
+4. 让它生成 `outputs/leader-summary.md` 和 `outputs/weekly-report.md`。
 5. 检查有没有编造、遗漏和套话。

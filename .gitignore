@@ -1,11 +1,14 @@
 # Local third-party projects and downloaded mirrors
 /ppt-master/
 /AlphaStS-src/
+/cppsim_work/
+/backups/
 
 # Generated PPT Master outputs
 /kits/ppt-master-starter/outputs/*
 !/kits/ppt-master-starter/outputs/.gitkeep
 /kits/ppt-master-starter/projects/
+/kits/weekly-status-starter/inputs/weekly-notes.md
 
 # Packaged archives should be published as releases, not committed by default
 *.zip
