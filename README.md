@@ -13,7 +13,7 @@ AI Skills for Everyone 是一个面向普通人的开源 AI Skill 精选库。
 - 进阶：功能更完整，但需要一点环境配置或 Agent 使用经验。
 - 可改造：适合轻技术用户或开发者继续改造成自己的流程。
 
-第一条完整样板是 PPT 生成。你可以跟着第 1 课，用开源 PPT Skill 把一份材料生成可编辑的 `.pptx`。现在也补了一个周报 / 状态更新轻 Skill 和 starter，并开始收录前端页面生成类 Skill。后续会继续补邮件、会议纪要、长文档摘要、表格分析等场景。
+第一条完整样板是 PPT 生成。你可以跟着第 1 课，用开源 PPT Skill 把一份材料生成可编辑的 `.pptx`。现在也补了周报 / 状态更新、后端接口沟通两个轻 Skill 和 starter，并开始收录前端页面生成类 Skill。后续会继续补邮件、会议纪要、长文档摘要、表格分析等场景。
 
 ## 项目受众
 
@@ -45,6 +45,7 @@ AI Skills for Everyone 是一个面向普通人的开源 AI Skill 精选库。
 | [第 6 课：用 Skills Manager 管理多个 Skill](tutorial/06-manage-many-skills.md) | 用假 Skill 试跑导入、preset 和同步流程，适合已经有多个 Skill 的进阶用户。 | ✅ |
 | [PPT Master Starter](kits/ppt-master-starter/README.md) | 第 1 课配套工作区，普通用户可以直接跟着操作。 | ✅ |
 | [Weekly Status Starter](kits/weekly-status-starter/README.md) | 把零散工作记录整理成周报或项目状态更新。 | ✅ |
+| [Backend API Brief Starter](kits/backend-api-brief-starter/README.md) | 把普通业务需求整理成给自己看的接口说明和给开发看的后端交接稿。 | ✅ |
 | [Skill Hub 总表](catalog/INDEX.md) | 按大类、小类和推荐位整理已收录 Skill。 | 🚧 |
 | [写作与办公合集](collections/writing-and-office.md) | 周报、邮件、会议纪要、PPT、表格、SOP 等办公场景。 | 🚧 |
 | [开发与调试合集](collections/coding-and-devtools.md) | 前端页面、小应用生成、后端、测试、部署和日志分析。 | 🚧 |

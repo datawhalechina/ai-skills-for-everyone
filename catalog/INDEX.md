@@ -57,7 +57,7 @@
 | 前端页面 / 小应用生成 | [frontend-design](coding-and-devtools/frontend-design.md) | [frontend-ui-engineering](coding-and-devtools/frontend-ui-engineering.md) | [web-artifacts-builder](coding-and-devtools/web-artifacts-builder.md) | 已完成第一轮评测；[frontend-dev](coding-and-devtools/frontend-dev.md) 作为高级视觉补充 |
 | Skill 管理 / Agent 环境管理 | 待补 | [Skills Manager](coding-and-devtools/skills-manager.md) | 待补 | 可参考，适合已经有多个 Skill 的用户，不作为新手首选 |
 | 截图 / 设计稿转代码 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
-| 后端开发 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
+| 后端开发 | [Backend API Brief](coding-and-devtools/backend-api-brief.md)<br>[Backend API Brief Starter](../kits/backend-api-brief-starter/README.md) | 待筛选 | 待筛选 | 最省心候选已补 starter；进阶和可改造继续筛选 |
 | 测试与质量 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
 | 部署与运维 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |
 | 日志分析 | 待搜罗 | 待搜罗 | 待搜罗 | 待补 |

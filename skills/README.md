@@ -9,3 +9,4 @@
 已维护：
 
 - [weekly-status](weekly-status/SKILL.md)：把零散工作记录整理成中文周报或项目状态更新。
+- [backend-api-brief](backend-api-brief/SKILL.md)：把普通人的业务需求整理成给自己看的接口说明和给开发看的后端交接稿，配套 starter 在 `kits/backend-api-brief-starter/`。

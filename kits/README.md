@@ -8,6 +8,7 @@
 
 - [ppt-master-starter](ppt-master-starter/README.md)：让普通人用 PPT Master 把 PDF、DOCX 或 Markdown 做成可编辑 PPT。
 - [weekly-status-starter](weekly-status-starter/README.md)：搭配本项目维护的 Weekly Status Skill，把零散工作记录整理成周报或项目状态更新。
+- [backend-api-brief-starter](backend-api-brief-starter/README.md)：搭配本项目维护的 Backend API Brief Skill，把业务需求整理成接口说明和后端交接稿。
 
 Kit 的原则：
 

@@ -69,6 +69,17 @@
 - [x] 补齐可复制提示词：`prompts/normal-use.txt`。
 - [x] 明确周报默认面向直属领导或项目负责人，语气要稳重、简洁，不邀功、不甩锅。
 
+### Backend API Brief Starter
+
+- [x] 完成 `kits/backend-api-brief-starter/`。
+- [x] 补齐 `START_HERE.md`。
+- [x] 补齐 `README.md`。
+- [x] 补齐 `troubleshooting.md`。
+- [x] 补齐 `samples/sample-api-request.md` 任务归档虚构样例。
+- [x] 补齐 `inputs/put-your-request-here.md` 输入模板。
+- [x] 补齐可复制提示词：`prompts/normal-use.txt`。
+- [x] 明确 starter 只做后端规划和交接，不写代码、不生成生产 SQL、不改数据库。
+
 ### 社区和维护基础
 
 - [x] 建好 `CONTRIBUTING.md`。
@@ -102,6 +113,10 @@
 - [x] 开发与调试补：前端页面 / 小应用生成。已补 frontend-design、frontend-ui-engineering、web-artifacts-builder、frontend-dev，并完成 4 × 3 本地试跑记录。
 - [x] 优化 Weekly Status Skill：已补当前状态、本周结论、领导版摘要、完整周报和领导视角表达。
 - [x] 改造 Weekly Status Skill：已支持读取固定 `inputs/`，输出 `outputs/leader-summary.md` 和 `outputs/weekly-report.md` 两个版本。
+- [x] 开发与调试补：后端开发。已完成第一轮候选收集和 6 case 文档级试跑，暂定 API 评审小 skill 与进阶后端工作流两条线。
+- [x] 设计后端小白入口 Skill：`backend-api-brief`，用于生成给自己看的接口说明和给开发看的后端交接稿。
+- [x] 用任务归档需求试跑 `backend-api-brief`，已生成给自己看的接口说明和给开发看的后端交接稿。
+- [x] 根据任务归档试跑补 `backend-api-brief-starter`，让普通用户可以按固定 `inputs/` 和 `outputs/` 路线试跑。
 - [ ] 写作与办公继续补：会议纪要整理。
 - [ ] 写作与办公继续补：长文档摘要。
 - [ ] 写作与办公继续补：表格分析报告。
@@ -134,7 +149,7 @@
 2. 第 0 课补一张“你该走哪条路线”的简单表格。
 3. 第 3 课补一张 Skill 卡片阅读示例。
 4. 基于真实用户反馈继续打磨 `skills/weekly-status/` 的周报语气、版式和输入模板。
-5. 继续补开发与调试：截图 / 设计稿转代码。
+5. 继续补开发与调试：后端方向继续筛选进阶 / 可改造候选；同时继续搜罗截图 / 设计稿转代码。
 6. 继续补写作与办公里的邮件、会议纪要候选和 starter。
 
 ## 收录原则提醒
