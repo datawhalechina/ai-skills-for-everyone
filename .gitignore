@@ -1,6 +1,5 @@
 # Local third-party projects and downloaded mirrors
 /ppt-master/
-/AlphaStS-src/
 /cppsim_work/
 /backups/
 
@@ -9,6 +8,9 @@
 !/kits/ppt-master-starter/outputs/.gitkeep
 /kits/ppt-master-starter/projects/
 /kits/weekly-status-starter/inputs/weekly-notes.md
+/kits/backend-api-brief-starter/inputs/api-request.md
+/kits/backend-api-brief-starter/outputs/*
+!/kits/backend-api-brief-starter/outputs/.gitkeep
 
 # Packaged archives should be published as releases, not committed by default
 *.zip
@@ -17,6 +19,7 @@
 
 # Local agent/editor state
 .codex/
+.codex-staging/
 .agents/
 .trae/
 .cursor/
